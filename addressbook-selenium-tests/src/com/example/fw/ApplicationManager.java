@@ -19,6 +19,10 @@ public class ApplicationManager {
 		driver = new FirefoxDriver();
 	    baseUrl = "http://localhost/";
 	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	    
+	    navigationHelper = new NavigationHelper(this);
+	    groupHelper = new GroupHelper(this);
+	    contatHelper = new ContactHelper(this);
 	}
 	
 	public void stop() {

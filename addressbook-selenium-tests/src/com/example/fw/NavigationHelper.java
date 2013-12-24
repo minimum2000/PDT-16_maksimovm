@@ -13,6 +13,6 @@ public class NavigationHelper extends HelperBase {
 	}
 
 	public void returnHomePage() {
-		driver.findElement(By.linkText("home")).click();
+		click(By.linkText("home"));
 	}
 }

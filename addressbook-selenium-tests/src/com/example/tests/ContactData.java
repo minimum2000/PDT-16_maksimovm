@@ -2,42 +2,42 @@ package com.example.tests;
 
 public class ContactData {
 	
-	public String f_name;
-	public String l_name;
+	public String firstName;
+	public String lastName;
 	public String address;
-	public String home_phone;
-	public String mob_phone;
-	public String wrk_phone;
-	public String f_email;
-	public String s_email;
-	public String dd_birth;
-	public String mm_birth;
-	public String yyyy_birth;
-	public String group_select;
-	public String sec_address;
-	public String home_field;
+	public String homePhone;
+	public String mobilePhone;
+	public String workPhone;
+	public String firstEmail;
+	public String secondaryEmail;
+	public String birthDay;
+	public String birthMonth;
+	public String birthYear;
+	public String groupSelect;
+	public String secondaryAddress;
+	public String homeField;
 
 	public ContactData() {
 	}
 	
-	public ContactData(String f_name, String l_name, String address,
-			String home_phone, String mob_phone, String wrk_phone,
-			String f_email, String s_email, String dd_birth, String mm_birth,
-			String yyyy_birth, String group_select, String sec_address,
-			String home_field) {
-		this.f_name = f_name;
-		this.l_name = l_name;
+	public ContactData(String firstName, String lastName, String address,
+			String homePhone, String mobilePhone, String workPhone,
+			String firstEmail, String secondaryEmail, String birthDay, String birthMonth,
+			String birthYear, String groupSelect, String secondaryAddress,
+			String homeField) {
+		this.firstName = firstName;
+		this.lastName = lastName;
 		this.address = address;
-		this.home_phone = home_phone;
-		this.mob_phone = mob_phone;
-		this.wrk_phone = wrk_phone;
-		this.f_email = f_email;
-		this.s_email = s_email;
-		this.dd_birth = dd_birth;
-		this.mm_birth = mm_birth;
-		this.yyyy_birth = yyyy_birth;
-		this.group_select = group_select;
-		this.sec_address = sec_address;
-		this.home_field = home_field;
+		this.homePhone = homePhone;
+		this.mobilePhone = mobilePhone;
+		this.workPhone = workPhone;
+		this.firstEmail = firstEmail;
+		this.secondaryEmail = secondaryEmail;
+		this.birthDay = birthDay;
+		this.birthMonth = birthMonth;
+		this.birthYear = birthYear;
+		this.groupSelect = groupSelect;
+		this.secondaryAddress = secondaryAddress;
+		this.homeField = homeField;
 	}
 }

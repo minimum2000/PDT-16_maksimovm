@@ -34,5 +34,23 @@ public class ContactHelper extends HelperBase {
 	public void initNewAdressBookCreation() {
 		click(By.linkText("add new"));
 	}
+	
+	private void selectContactByIndex(int indexEdit, int indexCheckbox){
+		click(By.xpath("(//input[@id='id" + indexCheckbox + "'])"));
+		click(By.xpath("(//img[@alt='Edit'])[" + indexEdit + "]"));
+	}
+	
+	private void editOrDeleteContact(int indexDeleteOrUpdate) {
+		click(By.xpath("(//input[@name='update'])[" + indexDeleteOrUpdate + "]"));
+	}
+
+	public void deleteContact(int indexEdit, int indexChechbox, int deleteButton) {
+		selectContactByIndex(indexEdit, indexChechbox);
+		editOrDeleteContact(deleteButton);
+	}
+
+	public void updateContact(int updateButton) {
+		editOrDeleteContact(updateButton);
+	}
 
 }

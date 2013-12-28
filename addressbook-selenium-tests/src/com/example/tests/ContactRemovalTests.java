@@ -7,7 +7,8 @@ public class ContactRemovalTests extends TestBase {
 	@Test
 	public void deleteSomeContact() {
 		app.getNavigationHelper().openMainPage();
-		app.getContactHelper().deleteContact(3,13,2);
+	// change parameters before launch
+		app.getContactHelper().deleteContact(5,8,2);
 		app.getNavigationHelper().returnHomePage();
 	}
 

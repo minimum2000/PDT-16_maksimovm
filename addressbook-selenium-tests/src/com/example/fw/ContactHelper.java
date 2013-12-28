@@ -44,13 +44,31 @@ public class ContactHelper extends HelperBase {
 		click(By.xpath("(//input[@name='update'])[" + indexDeleteOrUpdate + "]"));
 	}
 
-	public void deleteContact(int indexEdit, int indexChechbox, int deleteButton) {
-		selectContactByIndex(indexEdit, indexChechbox);
+	public void deleteContact(int indexEdit, int indexCheckbox, int deleteButton) {
+		selectContactByIndex(indexEdit, indexCheckbox);
 		editOrDeleteContact(deleteButton);
 	}
 
 	public void updateContact(int updateButton) {
 		editOrDeleteContact(updateButton);
+	}
+
+	private void contactDetail(int indexCheckbox , int detailButton) {
+		click(By.xpath("(//input[@id='id" + indexCheckbox + "'])"));
+		click(By.xpath("(//img[@alt='Details'])[" + detailButton + "]"));
+		click(By.name("modifiy"));
+	}
+	
+	/*private void contactModificationSecondary() {
+		
+	}*/
+	
+	public void editContact(int indexCheckbox, int detailButton) {
+		contactDetail(indexCheckbox, detailButton);
+	}
+
+	public void editContactAnotherModification(int indexEdit, int indexCheckbox) {
+		selectContactByIndex(indexEdit, indexCheckbox);
 	}
 
 }

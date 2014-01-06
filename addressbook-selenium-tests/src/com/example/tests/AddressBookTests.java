@@ -40,8 +40,6 @@ public class AddressBookTests extends TestBase {
     List<ContactData> newList = app.getContactHelper().getContacts();
     
     // compare states
-    assertEquals(newList.size(), oldList.size()+1);
-    
     oldList.add(contact);
     Collections.sort(oldList);
     assertEquals(newList, oldList);

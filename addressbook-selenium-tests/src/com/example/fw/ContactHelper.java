@@ -78,11 +78,16 @@ public class ContactHelper extends HelperBase {
 
 	public List<ContactData> getContacts() {
 		List<ContactData> contacts = new ArrayList<ContactData>();
-		List<WebElement> checkboxes = driver.findElements(By.name("selected[]"));
-		for (WebElement checkbox : checkboxes) {
+		List<WebElement> tableRows = driver.findElements(By.name("entry"));
+		for (WebElement row : tableRows) {
+			List<WebElement> cells = row.findElements(By.tagName("td"));
+			String firstName = cells.get(2).getText();
+			String lastName = cells.get(1).getText();
+			
 			ContactData contact = new ContactData();
-			String title = checkbox.getAttribute("title");
-			contact.firstName = title.substring("Select (".length(), title.length() - " last name 1)".length());
+			
+			contact.firstName = firstName;
+			contact.lastName = lastName;
 			contacts.add(contact);
 		}
 		return contacts;

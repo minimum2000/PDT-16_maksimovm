@@ -4,23 +4,24 @@ import static org.testng.Assert.assertEquals;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 import org.testng.annotations.Test;
 
 public class ContactModificationTests extends TestBase {
 	
-	@Test
-	public void modifySomeContact() {
+	@Test(dataProvider = "randomValidContactGenerator")
+	public void modifySomeContact(ContactData contact) {
 		app.getNavigationHelper().openMainPage();
 		
 		// save old state
 	    List<ContactData> oldList = app.getContactHelper().getContacts();
 	    
+	    Random rnd = new Random();
+	    int index = rnd.nextInt(oldList.size()-1);
+	    
 	    // actions
-		app.getContactHelper().editContact(0);
-		ContactData contact = new ContactData();
-		contact.firstName = "Test1";
-		contact.lastName = "Test1 Test1";
+		app.getContactHelper().editContact(index);
 		app.getContactHelper().fillNewContact(contact);
 		app.getContactHelper().updateContact(1);
 		app.getNavigationHelper().returnHomePage();
@@ -29,25 +30,25 @@ public class ContactModificationTests extends TestBase {
 	    List<ContactData> newList = app.getContactHelper().getContacts();
 	    
 	    // compare states
-	    oldList.remove(0);
+	    oldList.remove(index);
 	    oldList.add(contact);
 	    Collections.sort(oldList);
 	    assertEquals(newList, oldList);
 	}
 	
-	@Test
-	public void anotherContactModification(){
+	@Test(dataProvider = "randomValidContactGenerator")
+	public void anotherContactModification(ContactData contact){
 		app.getNavigationHelper().openMainPage();
 		
 		// save old state
 	    List<ContactData> oldList = app.getContactHelper().getContacts();
+
+	    Random rnd = new Random();
+	    int index = rnd.nextInt(oldList.size()-1);
+	    
 	    
 	    // actions
-		app.getContactHelper().editContactAnotherModification(0);
-		ContactData contact = new ContactData();
-		contact.firstName = "Test first name secondary modification";
-		contact.lastName = "Test last name secondary modification";
-		contact.firstEmail = "Test first e-mail secondary modification";
+		app.getContactHelper().editContactAnotherModification(index);
 		app.getContactHelper().fillNewContact(contact);
 		app.getContactHelper().updateContact(1);
 		app.getNavigationHelper().returnHomePage();
@@ -56,7 +57,7 @@ public class ContactModificationTests extends TestBase {
 	    List<ContactData> newList = app.getContactHelper().getContacts();
 	    
 	    // compare states
-	    oldList.remove(0);
+	    oldList.remove(index);
 	    oldList.add(contact);
 	    Collections.sort(oldList);
 	    assertEquals(newList, oldList);

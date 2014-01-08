@@ -39,17 +39,16 @@ public class ContactHelper extends HelperBase {
 		click(By.linkText("add new"));
 	}
 	
-	private void selectContactByIndex(int indexEdit, int indexCheckbox){
-		click(By.xpath("(//input[@id='id" + indexCheckbox + "'])"));
-		click(By.xpath("(//img[@alt='Edit'])[" + indexEdit + "]"));
+	private void selectContactByIndex(int indexEdit){
+		click(By.xpath("(//img[@alt='Edit'])[" + (indexEdit+1) + "]"));
 	}
 	
 	private void editOrDeleteContact(int indexDeleteOrUpdate) {
 		click(By.xpath("(//input[@name='update'])[" + indexDeleteOrUpdate + "]"));
 	}
 
-	public void deleteContact(int indexEdit, int indexCheckbox, int deleteButton) {
-		selectContactByIndex(indexEdit, indexCheckbox);
+	public void deleteContact(int indexEdit, int deleteButton) {
+		selectContactByIndex(indexEdit);
 		editOrDeleteContact(deleteButton);
 	}
 
@@ -57,22 +56,21 @@ public class ContactHelper extends HelperBase {
 		editOrDeleteContact(updateButton);
 	}
 
-	private void contactDetail(int indexCheckbox , int detailButton) {
-		click(By.xpath("(//input[@id='id" + indexCheckbox + "'])"));
-		click(By.xpath("(//img[@alt='Details'])[" + detailButton + "]"));
+	private void contactDetail(int detailButton) {
+		click(By.xpath("(//img[@alt='Details'])[" + (detailButton+1) + "]"));
 		click(By.name("modifiy"));
 	}
 	
-	public void editContact(int indexCheckbox, int detailButton) {
-		contactDetail(indexCheckbox, detailButton);
+	public void editContact(int detailButton) {
+		contactDetail(detailButton);
 	}
 
-	public void editContactAnotherModification(int indexEdit, int indexCheckbox) {
-		selectContactByIndex(indexEdit, indexCheckbox);
+	public void editContactAnotherModification(int indexEdit) {
+		selectContactByIndex(indexEdit);
 	}
 
-	public void anotherDeleteContact(int indexCheckbox, int detailButton, int indexDeleteOrUpdate) {
-		contactDetail(indexCheckbox, detailButton);
+	public void anotherDeleteContact(int detailButton, int indexDeleteOrUpdate) {
+		contactDetail(detailButton);
 		editOrDeleteContact(indexDeleteOrUpdate);
 	}
 

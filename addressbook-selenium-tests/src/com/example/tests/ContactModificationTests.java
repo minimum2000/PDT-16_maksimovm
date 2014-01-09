@@ -23,7 +23,7 @@ public class ContactModificationTests extends TestBase {
 	    // actions
 		app.getContactHelper().editContact(index);
 		app.getContactHelper().fillNewContact(contact, false);
-		app.getContactHelper().updateContact(1);
+		app.getContactHelper().updateContact(1); 
 		app.getNavigationHelper().returnHomePage();
 		
 		// save new state

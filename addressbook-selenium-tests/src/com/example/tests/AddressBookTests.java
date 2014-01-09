@@ -20,7 +20,7 @@ public class AddressBookTests extends TestBase {
     
     // actions
     app.getContactHelper().initNewAdressBookCreation();
-    app.getContactHelper().fillNewContact(contact);
+    app.getContactHelper().fillNewContact(contact, true);
     app.getContactHelper().submitNewContactCreation();
     app.getNavigationHelper().returnHomePage();
     

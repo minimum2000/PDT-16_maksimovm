@@ -18,7 +18,7 @@ public class ContactHelper extends HelperBase {
 		click(By.name("submit"));
 	}
 
-	public void fillNewContact(ContactData contact) {
+	public void fillNewContact(ContactData contact, boolean param) {
 		type(By.name("firstname"), contact.firstName);
 		type(By.name("lastname"), contact.lastName);
 		type(By.name("address"), contact.address);
@@ -30,7 +30,9 @@ public class ContactHelper extends HelperBase {
 	    selectByText(By.name("bday"), contact.birthDay);
 	    selectByText(By.name("bmonth"), contact.birthMonth);
 	    type(By.name("byear"), contact.birthYear);
+	    if (param == true) {
 	    selectByText(By.name("new_group"), contact.groupSelect);
+	    }
 	    type(By.name("address2"), contact.secondaryAddress);
 	    type(By.name("phone2"), contact.homeField);
 	}

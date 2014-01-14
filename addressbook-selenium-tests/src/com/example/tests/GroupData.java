@@ -49,6 +49,11 @@ public class GroupData implements Comparable<GroupData> {
 	@Override
 	public int compareTo(GroupData other) {
 		return this.name.toLowerCase().compareTo(other.name.toLowerCase());
+	}
+
+	public Object withName(String generateRandomString) {
+		// TODO Auto-generated method stub
+		return null;
 	}	
 	
 }

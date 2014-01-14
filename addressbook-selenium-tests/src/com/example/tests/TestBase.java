@@ -29,7 +29,10 @@ public class TestBase {
 	  public Iterator<Object[]> randomValidGroupGenerator() {
 			List<Object[]> list = new ArrayList<Object[]>();
 			for (int i = 0; i < 5; i++){
-				GroupData group = new GroupData();
+				GroupData group = new GroupData()
+					.withName(generateRandomString())
+					.withHeader(generateRandomString())
+					.withFooter(generateRandomString());
 				group.name = generateRandomString();
 				group.header = generateRandomString();
 				group.footer = generateRandomString();
@@ -37,8 +40,8 @@ public class TestBase {
 			}
 			return list.iterator();
 		}
-		
-	  @DataProvider
+
+	@DataProvider
 	  public Iterator<Object[]> randomValidContactGenerator() {
 		  List<Object[]> list = new ArrayList<Object[]>();
 		  for (int i = 0; i < 5; i++){

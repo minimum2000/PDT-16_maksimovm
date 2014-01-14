@@ -30,7 +30,7 @@ public class ContactHelper extends HelperBase {
 	    selectByText(By.name("bday"), contact.birthDay);
 	    selectByText(By.name("bmonth"), contact.birthMonth);
 	    type(By.name("byear"), contact.birthYear);
-	    if (param == true) {
+	    if (param) {
 	    selectByText(By.name("new_group"), contact.groupSelect);
 	    }
 	    type(By.name("address2"), contact.secondaryAddress);

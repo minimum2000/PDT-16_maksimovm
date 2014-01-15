@@ -9,6 +9,9 @@ import org.openqa.selenium.WebElement;
 import com.example.tests.ContactData;
 
 public class ContactHelper extends HelperBase {
+	
+	public static boolean CREATION = true;
+	public static boolean MODIFICATION = false;
 
 	public ContactHelper(ApplicationManager manager) {
 		super(manager);
@@ -19,7 +22,7 @@ public class ContactHelper extends HelperBase {
 		return this;
 	}
 
-	public ContactHelper fillNewContact(ContactData contact, boolean param) {
+	public ContactHelper fillNewContact(ContactData contact, boolean formType) {
 		type(By.name("firstname"), contact.getFirstName());
 		type(By.name("lastname"), contact.getLastName());
 		type(By.name("address"), contact.getAddress());
@@ -31,8 +34,12 @@ public class ContactHelper extends HelperBase {
 	    selectByText(By.name("bday"), contact.getBirthDay());
 	    selectByText(By.name("bmonth"), contact.getBirthMonth());
 	    type(By.name("byear"), contact.getBirthYear());
-	    if (param) {
+	    if (formType == CREATION) {
 	    selectByText(By.name("new_group"), contact.getGroupSelect());
+	    } else {
+	    	if (driver.findElements(By.name("new_group")).size() != 0){
+	    		throw new Error ("Group selector exists in contact modification form");
+	    	}
 	    }
 	    type(By.name("address2"), contact.getSecondaryAddress());
 	    type(By.name("phone2"), contact.getHomeField());
@@ -91,9 +98,6 @@ public class ContactHelper extends HelperBase {
 			List<WebElement> cells = row.findElements(By.tagName("td"));
 			String firstName = cells.get(2).getText();
 			String lastName = cells.get(1).getText();
-			
-			contact.firstName = firstName;
-			contact.lastName = lastName;
 			contacts.add(new ContactData()
 									.withFirstName(firstName)
 									.withLastName(lastName));

@@ -91,7 +91,7 @@ public class TestBase {
 	  }
 	  
 	  public String generateRandomGroupSelect() {
-		  app.getGroupHelper().gotoGroupsPage();
+		  app.getNavigationHelper().gotoGroupsPage();
 		  List<GroupData> groups = app.getGroupHelper().getGroups();
 		  int listSize = groups.size();
 		  Random rnd = new Random();

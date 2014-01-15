@@ -36,11 +36,6 @@ public class GroupHelper extends HelperBase {
 	    return this;
 	}
 
-	public GroupHelper gotoGroupsPage() {
-	    click(By.linkText("groups"));
-	    return this;
-	}
-
 	public GroupHelper deleteGroup(int index) {
 		selectGroupByIndex(index);
 		click(By.name("delete"));

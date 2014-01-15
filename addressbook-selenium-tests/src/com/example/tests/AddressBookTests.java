@@ -8,6 +8,7 @@ import java.util.List;
 import org.testng.annotations.Test;
 
 import com.example.fw.ContactHelper;
+import static com.example.fw.ContactHelper.CREATION;
 
 public class AddressBookTests extends TestBase {
 
@@ -24,7 +25,7 @@ public class AddressBookTests extends TestBase {
     // actions
     app.getContactHelper()
     	.initNewAdressBookCreation()
-    	.fillNewContact(contact, true)
+    	.fillNewContact(contact, CREATION)
     	.submitNewContactCreation();
     app.getNavigationHelper().returnHomePage();
     

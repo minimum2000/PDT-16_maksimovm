@@ -7,6 +7,8 @@ import java.util.List;
 
 import org.testng.annotations.Test;
 
+import com.example.fw.ContactHelper;
+
 public class AddressBookTests extends TestBase {
 
   
@@ -16,16 +18,18 @@ public class AddressBookTests extends TestBase {
     app.getNavigationHelper().openMainPage();
     
     // save old state
-    List<ContactData> oldList = app.getContactHelper().getContacts();
+    ContactHelper contactHelper = app.getContactHelper();
+	List<ContactData> oldList = contactHelper.getContacts();
     
     // actions
-    app.getContactHelper().initNewAdressBookCreation();
-    app.getContactHelper().fillNewContact(contact, true);
-    app.getContactHelper().submitNewContactCreation();
+    app.getContactHelper()
+    	.initNewAdressBookCreation()
+    	.fillNewContact(contact, true)
+    	.submitNewContactCreation();
     app.getNavigationHelper().returnHomePage();
     
     // save new state
-    List<ContactData> newList = app.getContactHelper().getContacts();
+    List<ContactData> newList = contactHelper.getContacts();
     
     // compare states
     oldList.add(contact);

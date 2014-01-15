@@ -14,8 +14,9 @@ public class ContactHelper extends HelperBase {
 		super(manager);
 	}
 
-	public void submitNewContactCreation() {
+	public ContactHelper submitNewContactCreation() {
 		click(By.name("submit"));
+		return this;
 	}
 
 	public void fillNewContact(ContactData contact, boolean param) {
@@ -37,8 +38,9 @@ public class ContactHelper extends HelperBase {
 	    type(By.name("phone2"), contact.homeField);
 	}
 
-	public void initNewAdressBookCreation() {
+	public ContactHelper initNewAdressBookCreation() {
 		click(By.linkText("add new"));
+		return this;
 	}
 	
 	private void selectContactByIndex(int indexEdit){
@@ -49,13 +51,15 @@ public class ContactHelper extends HelperBase {
 		click(By.xpath("(//input[@name='update'])[" + indexDeleteOrUpdate + "]"));
 	}
 
-	public void deleteContact(int indexEdit, int deleteButton) {
+	public ContactHelper deleteContact(int indexEdit, int deleteButton) {
 		selectContactByIndex(indexEdit);
 		editOrDeleteContact(deleteButton);
+		return this;
 	}
 
-	public void updateContact(int updateButton) {
+	public ContactHelper updateContact(int updateButton) {
 		editOrDeleteContact(updateButton);
+		return this;
 	}
 
 	private void contactDetail(int detailButton) {
@@ -63,17 +67,20 @@ public class ContactHelper extends HelperBase {
 		click(By.name("modifiy"));
 	}
 	
-	public void editContact(int detailButton) {
+	public ContactHelper editContact(int detailButton) {
 		contactDetail(detailButton);
+		return this;
 	}
 
-	public void editContactAnotherModification(int indexEdit) {
+	public ContactHelper editContactAnotherModification(int indexEdit) {
 		selectContactByIndex(indexEdit);
+		return this;
 	}
 
-	public void anotherDeleteContact(int detailButton, int indexDeleteOrUpdate) {
+	public ContactHelper anotherDeleteContact(int detailButton, int indexDeleteOrUpdate) {
 		contactDetail(detailButton);
 		editOrDeleteContact(indexDeleteOrUpdate);
+		return this;
 	}
 
 	public List<ContactData> getContacts() {

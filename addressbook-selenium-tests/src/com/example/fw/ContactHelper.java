@@ -19,7 +19,7 @@ public class ContactHelper extends HelperBase {
 		return this;
 	}
 
-	public void fillNewContact(ContactData contact, boolean param) {
+	public ContactHelper fillNewContact(ContactData contact, boolean param) {
 		type(By.name("firstname"), contact.firstName);
 		type(By.name("lastname"), contact.lastName);
 		type(By.name("address"), contact.address);
@@ -36,6 +36,7 @@ public class ContactHelper extends HelperBase {
 	    }
 	    type(By.name("address2"), contact.secondaryAddress);
 	    type(By.name("phone2"), contact.homeField);
+	    return this;
 	}
 
 	public ContactHelper initNewAdressBookCreation() {

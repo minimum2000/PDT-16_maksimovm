@@ -2,20 +2,20 @@ package com.example.tests;
 
 public class ContactData implements Comparable<ContactData> {
 	
-	public String firstName;
-	public String lastName;
-	public String address;
-	public String homePhone;
-	public String mobilePhone;
-	public String workPhone;
-	public String firstEmail;
-	public String secondaryEmail;
-	public String birthDay;
-	public String birthMonth;
-	public String birthYear;
-	public String groupSelect;
-	public String secondaryAddress;
-	public String homeField;
+	private String firstName;
+	private String lastName;
+	private String address;
+	private String homePhone;
+	private String mobilePhone;
+	private String workPhone;
+	private String firstEmail;
+	private String secondaryEmail;
+	private String birthDay;
+	private String birthMonth;
+	private String birthYear;
+	private String groupSelect;
+	private String secondaryAddress;
+	private String homeField;
 
 	public ContactData() {
 	}
@@ -81,4 +81,131 @@ public class ContactData implements Comparable<ContactData> {
 		   }
 		   return this.firstName.toLowerCase().compareTo(other.firstName.toLowerCase());
 	}
+
+	public ContactData withAddress(String address) {
+		this.address = address;
+		return this;
+	}
+
+	public ContactData withBirthDay(String birthDay) {
+		this.birthDay = birthDay;
+		return this;
+	}
+
+	public ContactData withBirthMonth(String birthMonth) {
+		this.birthMonth = birthMonth;
+		return this;
+	}
+
+	public ContactData withBirthYear(String birthYear) {
+		this.birthYear = birthYear;
+		return this;
+	}
+
+	public ContactData withFirstEmail(String firstEmail) {
+		this.firstEmail = firstEmail;
+		return this;
+	}
+
+	public ContactData withFirstName(String firstName) {
+		this.firstName = firstName;
+		return this;
+	}
+
+	public ContactData withGroupSelect(String groupSelect) {
+		this.groupSelect = groupSelect;
+		return this;
+	}
+
+	public ContactData withHomeField(String homeField) {
+		this.homeField = homeField;
+		return this;
+	}
+
+	public ContactData withHomePhone(String homePhone) {
+		this.homePhone = homePhone;
+		return this;
+	}
+
+	public ContactData withLastName(String lastName) {
+		this.lastName = lastName;
+		return this;
+	}
+
+	public ContactData withMobilePhone(String mobilePhone) {
+		this.mobilePhone = mobilePhone;
+		return this;
+	}
+
+	public ContactData withSecondaryAddress(String secondaryAddress) {
+		this.secondaryAddress = secondaryAddress;
+		return this;
+	}
+
+	public ContactData withSecondaryEmail(String secondaryEmail) {
+		this.secondaryEmail = secondaryEmail;
+		return this;
+	}
+
+	public ContactData withWorkPhone(String workPhone) {
+		this.workPhone = workPhone;
+		return this;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public String getHomePhone() {
+		return homePhone;
+	}
+
+	public String getMobilePhone() {
+		return mobilePhone;
+	}
+
+	public String getWorkPhone() {
+		return workPhone;
+	}
+
+	public String getFirstEmail() {
+		return firstEmail;
+	}
+
+	public String getSecondaryEmail() {
+		return secondaryEmail;
+	}
+
+	public String getBirthDay() {
+		return birthDay;
+	}
+
+	public String getBirthMonth() {
+		return birthMonth;
+	}
+
+	public String getBirthYear() {
+		return birthYear;
+	}
+
+	public String getGroupSelect() {
+		return groupSelect;
+	}
+
+	public String getSecondaryAddress() {
+		return secondaryAddress;
+	}
+
+	public String getHomeField() {
+		return homeField;
+	}
+	
 }

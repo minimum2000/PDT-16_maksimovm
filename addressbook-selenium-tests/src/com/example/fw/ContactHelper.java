@@ -20,22 +20,22 @@ public class ContactHelper extends HelperBase {
 	}
 
 	public ContactHelper fillNewContact(ContactData contact, boolean param) {
-		type(By.name("firstname"), contact.firstName);
-		type(By.name("lastname"), contact.lastName);
-		type(By.name("address"), contact.address);
-		type(By.name("home"), contact.homePhone);
-		type(By.name("mobile"), contact.mobilePhone);
-		type(By.name("work"), contact.workPhone);
-		type(By.name("email"), contact.firstEmail);
-		type(By.name("email2"), contact.secondaryEmail);
-	    selectByText(By.name("bday"), contact.birthDay);
-	    selectByText(By.name("bmonth"), contact.birthMonth);
-	    type(By.name("byear"), contact.birthYear);
+		type(By.name("firstname"), contact.getFirstName());
+		type(By.name("lastname"), contact.getLastName());
+		type(By.name("address"), contact.getAddress());
+		type(By.name("home"), contact.getHomePhone());
+		type(By.name("mobile"), contact.getMobilePhone());
+		type(By.name("work"), contact.getWorkPhone());
+		type(By.name("email"), contact.getFirstEmail());
+		type(By.name("email2"), contact.getSecondaryEmail());
+	    selectByText(By.name("bday"), contact.getBirthDay());
+	    selectByText(By.name("bmonth"), contact.getBirthMonth());
+	    type(By.name("byear"), contact.getBirthYear());
 	    if (param) {
-	    selectByText(By.name("new_group"), contact.groupSelect);
+	    selectByText(By.name("new_group"), contact.getGroupSelect());
 	    }
-	    type(By.name("address2"), contact.secondaryAddress);
-	    type(By.name("phone2"), contact.homeField);
+	    type(By.name("address2"), contact.getSecondaryAddress());
+	    type(By.name("phone2"), contact.getHomeField());
 	    return this;
 	}
 
@@ -92,11 +92,11 @@ public class ContactHelper extends HelperBase {
 			String firstName = cells.get(2).getText();
 			String lastName = cells.get(1).getText();
 			
-			ContactData contact = new ContactData();
-			
 			contact.firstName = firstName;
 			contact.lastName = lastName;
-			contacts.add(contact);
+			contacts.add(new ContactData()
+									.withFirstName(firstName)
+									.withLastName(lastName));
 		}
 		return contacts;
 	}

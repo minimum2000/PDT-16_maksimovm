@@ -42,21 +42,21 @@ public class TestBase {
 	  public Iterator<Object[]> randomValidContactGenerator() {
 		  List<Object[]> list = new ArrayList<Object[]>();
 		  for (int i = 0; i < 5; i++){
-			  ContactData contact = new ContactData();
-			  contact.address = generateRandomString();
-			  contact.birthDay = generateRandomBirthDay();
-			  contact.birthMonth = generateRandomBirthMonth();
-			  contact.birthYear = generateRandomString();
-			  contact.firstEmail = generateRandomString();
-			  contact.firstName = generateRandomString();
-			  contact.groupSelect = generateRandomGroupSelect();
-			  contact.homeField = generateRandomString();
-			  contact.homePhone = generateRandomString();
-			  contact.lastName = generateRandomString();
-			  contact.mobilePhone = generateRandomString();
-			  contact.secondaryAddress = generateRandomString();
-			  contact.secondaryEmail = generateRandomString();
-			  contact.workPhone = generateRandomString();
+			  ContactData contact = new ContactData()
+			  	.withAddress(generateRandomString())
+			  	.withBirthDay(generateRandomBirthDay())
+			  	.withBirthMonth(generateRandomBirthMonth())
+			  	.withBirthYear(generateRandomString())
+			  	.withFirstEmail(generateRandomString())
+			  	.withFirstName(generateRandomString())
+			  	.withGroupSelect(generateRandomGroupSelect())
+			  	.withHomeField(generateRandomString())
+			  	.withHomePhone(generateRandomString())
+			  	.withLastName(generateRandomString())
+			  	.withMobilePhone(generateRandomString())
+			  	.withSecondaryAddress(generateRandomString())
+			  	.withSecondaryEmail(generateRandomString())
+			  	.withWorkPhone(generateRandomString());
 			  list.add(new Object[]{contact});
 		  }
 		  return list.iterator();

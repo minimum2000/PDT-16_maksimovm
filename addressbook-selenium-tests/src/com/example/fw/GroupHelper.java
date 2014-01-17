@@ -1,12 +1,12 @@
 package com.example.fw;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import com.example.tests.GroupData;
+import com.example.utils.SortedListOf;
 
 public class GroupHelper extends HelperBase {
 
@@ -14,9 +14,9 @@ public class GroupHelper extends HelperBase {
 		super(manager);
 	}
 	
-	private List<GroupData> cachedGroups;
+	private SortedListOf<GroupData> cachedGroups;
 	
-	public List<GroupData> getGroups() {
+	public SortedListOf<GroupData> getGroups() {
 		if (cachedGroups == null) {
 			rebuildCache();
 		}
@@ -24,7 +24,7 @@ public class GroupHelper extends HelperBase {
 	}
 	
 	private void rebuildCache() {
-		List<GroupData> cachedGroups = new ArrayList<GroupData>();
+		SortedListOf<GroupData> cachedGroups = new SortedListOf<GroupData>(); 
 		
 		manager.navigateTo().groupsPage();
 		List<WebElement> checkboxes = driver.findElements(By.name("selected[]"));
@@ -40,7 +40,8 @@ public class GroupHelper extends HelperBase {
 		initNewGroupCreation();
 	    fillGroupForm(group);
 	    submitGroupCreation();
-	    returnToGroupPage();	
+	    returnToGroupPage();
+	    rebuildCache();
 	    return this;
 	}
 	
@@ -49,6 +50,7 @@ public class GroupHelper extends HelperBase {
 		fillGroupForm(group);
 		submitGroupModification();
 		returnToGroupPage();
+		rebuildCache();
 	return this;
 	}
 	
@@ -56,6 +58,7 @@ public class GroupHelper extends HelperBase {
 		selectGroupByIndex(index);
 		submitGroupDeletion();
 		returnToGroupPage();
+		rebuildCache();
 		return this;
 	}
 	
@@ -68,6 +71,7 @@ public class GroupHelper extends HelperBase {
 
 	public GroupHelper submitGroupCreation() {
 	    click(By.name("submit"));
+	    cachedGroups = null;
 	    return this;
 	}
 
@@ -95,10 +99,12 @@ public class GroupHelper extends HelperBase {
 
 	public GroupHelper submitGroupModification() {
 		click(By.name("update"));
+		cachedGroups = null;
 		return this;
 	}
 	
 	public void submitGroupDeletion() {
 		click(By.name("delete"));
+		cachedGroups = null;
 	}
 }

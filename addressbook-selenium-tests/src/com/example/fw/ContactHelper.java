@@ -1,12 +1,12 @@
 package com.example.fw;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import com.example.tests.ContactData;
+import com.example.utils.SortedListOf;
 
 public class ContactHelper extends HelperBase {
 	
@@ -17,24 +17,82 @@ public class ContactHelper extends HelperBase {
 		super(manager);
 	}
 	
-	public List<ContactData> getContacts() {
-		List<ContactData> contacts = new ArrayList<ContactData>();
+	private SortedListOf<ContactData> cachedContacts;
+	
+	public SortedListOf<ContactData> getContacts() {
+		if (cachedContacts == null){
+			rebuildCache();
+		} 
+		return cachedContacts;
+	}
+	
+	private void rebuildCache() {
+		SortedListOf<ContactData> cachedContacts = new SortedListOf<ContactData>();
+		
+		manager.navigateTo().mainPage();
 		List<WebElement> tableRows = driver.findElements(By.name("entry"));
 		for (WebElement row : tableRows) {
 			List<WebElement> cells = row.findElements(By.tagName("td"));
 			String firstName = cells.get(2).getText();
 			String lastName = cells.get(1).getText();
-			contacts.add(new ContactData()
+			cachedContacts.add(new ContactData()
 									.withFirstName(firstName)
 									.withLastName(lastName));
 		}
-		return contacts;
+	}
+
+	public ContactHelper createContact(ContactData contact) {
+		manager.navigateTo().groupsPage();
+		initNewAdressBookCreation();
+    	fillNewContact(contact, CREATION);
+    	submitNewContactCreation();
+    	manager.navigateTo().mainPage();
+    	rebuildCache();
+    	return this;
 	}
 	
+	public ContactHelper deleteContact(int indexEdit, int deleteButton) {
+		manager.navigateTo().mainPage();
+		selectContactByIndex(indexEdit);
+		editOrDeleteContact(deleteButton);
+		manager.navigateTo().mainPage();
+		rebuildCache();
+		return this;
+	}
+	
+	public ContactHelper anotherDeleteContact(int detailButton, int indexDeleteOrUpdate) {
+		manager.navigateTo().mainPage();
+		contactDetail(detailButton);
+		editOrDeleteContact(indexDeleteOrUpdate);
+		manager.navigateTo().mainPage();
+		rebuildCache();
+		return this;
+	}
+
+	public ContactHelper modifyContact(int index, ContactData contact) {
+		manager.navigateTo().mainPage();
+		editContact(index);
+		fillNewContact(contact, MODIFICATION);
+		updateContact(1); 
+		manager.navigateTo().mainPage();
+		rebuildCache();
+		return this;
+	}
+	
+	public ContactHelper anotherModifyContact(int index, ContactData contact) {
+		manager.navigateTo().mainPage();
+		editContactAnotherModification(index);
+		fillNewContact(contact, MODIFICATION);
+		updateContact(1);
+		manager.navigateTo().mainPage();
+		rebuildCache();
+		return this;
+	}
 	// ----------------------------------------------------------------
 
 	public ContactHelper submitNewContactCreation() {
 		click(By.name("submit"));
+		cachedContacts = null;
 		return this;
 	}
 
@@ -75,14 +133,9 @@ public class ContactHelper extends HelperBase {
 		click(By.xpath("(//input[@name='update'])[" + indexDeleteOrUpdate + "]"));
 	}
 
-	public ContactHelper deleteContact(int indexEdit, int deleteButton) {
-		selectContactByIndex(indexEdit);
-		editOrDeleteContact(deleteButton);
-		return this;
-	}
-
 	public ContactHelper updateContact(int updateButton) {
 		editOrDeleteContact(updateButton);
+		cachedContacts = null;
 		return this;
 	}
 
@@ -93,17 +146,13 @@ public class ContactHelper extends HelperBase {
 	
 	public ContactHelper editContact(int detailButton) {
 		contactDetail(detailButton);
+		cachedContacts = null;
 		return this;
 	}
 
 	public ContactHelper editContactAnotherModification(int indexEdit) {
 		selectContactByIndex(indexEdit);
-		return this;
-	}
-
-	public ContactHelper anotherDeleteContact(int detailButton, int indexDeleteOrUpdate) {
-		contactDetail(detailButton);
-		editOrDeleteContact(indexDeleteOrUpdate);
+		cachedContacts = null;
 		return this;
 	}
 }

@@ -1,55 +1,48 @@
 package com.example.tests;
 
-import static org.testng.Assert.assertEquals;
+import static org.hamcrest.Matchers.equalTo;
+import static org.junit.Assert.assertThat;
 
-import java.util.Collections;
-import java.util.List;
 import java.util.Random;
 
 import org.testng.annotations.Test;
+
+import com.example.utils.SortedListOf;
 
 public class ContactRemovalTests extends TestBase {
 	
 	@Test
 	public void deleteSomeContact() {
-		app.navigateTo().mainPage();
-
 		// save old state
-	    List<ContactData> oldList = app.getContactHelper().getContacts();
+		SortedListOf<ContactData> oldList = app.getContactHelper().getContacts();
 	    
 	    Random rnd = new Random();
 	    int index = rnd.nextInt(oldList.size()-1);
 	    
 	    // actions
 		app.getContactHelper().deleteContact(index,2);
-		app.navigateTo().mainPage();
 		
 		// save new state
-	    List<ContactData> newList = app.getContactHelper().getContacts();
+		SortedListOf<ContactData> newList = app.getContactHelper().getContacts();
 	    
 	    // compare states
-	    oldList.remove(index);
-	    Collections.sort(oldList);
-	    assertEquals(newList, oldList);
+		assertThat(newList, equalTo(oldList.without(index)));
 	}
 	
 	@Test
 	public void anotherDeleteSomeContact() {
-		app.navigateTo().mainPage();
-
 		// save old state
-	    List<ContactData> oldList = app.getContactHelper().getContacts();
-	    
-	    // actions
-		app.getContactHelper().anotherDeleteContact(0,2);
-		app.navigateTo().mainPage();		
+		SortedListOf<ContactData> oldList = app.getContactHelper().getContacts();
 		
-		// save new state
-	    List<ContactData> newList = app.getContactHelper().getContacts();
+		Random rnd = new Random();
+	    int index = rnd.nextInt(oldList.size()-1);
+	    // actions
+		app.getContactHelper().anotherDeleteContact(index,2);
+		
+		// save new state 
+		SortedListOf<ContactData> newList = app.getContactHelper().getContacts();
 	    
 	    // compare states
-	    oldList.remove(0);
-	    Collections.sort(oldList);
-	    assertEquals(newList, oldList);
+		assertThat(newList, equalTo(oldList.without(index)));
 	}
 }

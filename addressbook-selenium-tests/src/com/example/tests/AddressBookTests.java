@@ -16,7 +16,7 @@ public class AddressBookTests extends TestBase {
   
   @Test(dataProvider = "randomValidContactGenerator")
   public void testAddressBookWithValidData(ContactData contact) throws Exception {
-    app.getNavigationHelper().openMainPage();
+    app.navigateTo().mainPage();
     
     // save old state
     ContactHelper contactHelper = app.getContactHelper();
@@ -27,7 +27,7 @@ public class AddressBookTests extends TestBase {
     	.initNewAdressBookCreation()
     	.fillNewContact(contact, CREATION)
     	.submitNewContactCreation();
-    app.getNavigationHelper().returnHomePage();
+    app.navigateTo().homePage();
     
     // save new state
     List<ContactData> newList = contactHelper.getContacts();

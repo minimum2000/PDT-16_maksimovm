@@ -13,6 +13,45 @@ public class GroupHelper extends HelperBase {
 	public GroupHelper(ApplicationManager manager) {
 		super(manager);
 	}
+	
+	public List<GroupData> getGroups() {
+		List<GroupData> groups = new ArrayList<GroupData>();
+		
+		manager.navigateTo().groupsPage();
+		List<WebElement> checkboxes = driver.findElements(By.name("selected[]"));
+		for (WebElement checkbox : checkboxes) {
+			String title = checkbox.getAttribute("title");
+			String name = title.substring("Select (".length(), title.length() - ")".length());
+			groups.add(new GroupData().withName(name));
+		}
+		return groups;
+	}
+	
+	public GroupHelper createGroup(GroupData group) {
+		manager.navigateTo().groupsPage();
+		initNewGroupCreation();
+	    fillGroupForm(group);
+	    submitGroupCreation();
+	    returnToGroupPage();	
+	    return this;
+	}
+	
+	public GroupHelper modifyGroup(int index, GroupData group) {
+		initGroupModification(index);
+		fillGroupForm(group);
+		submitGroupModification();
+		returnToGroupPage();
+	return this;
+	}
+	
+	public GroupHelper deleteGroup(int index) {
+		selectGroupByIndex(index);
+		submitGroupDeletion();
+		returnToGroupPage();
+		return this;
+	}
+	
+	// ---------------------------------------------------------------------
 
 	public GroupHelper returnToGroupPage() {
 	    driver.findElement(By.linkText("group page")).click();
@@ -32,14 +71,8 @@ public class GroupHelper extends HelperBase {
 	  }
 
 	public GroupHelper initNewGroupCreation() {
-	    click(By.name("new"));
+		click(By.name("new"));
 	    return this;
-	}
-
-	public GroupHelper deleteGroup(int index) {
-		selectGroupByIndex(index);
-		click(By.name("delete"));
-		return this;
 	}
 
 	private void selectGroupByIndex(int index) {
@@ -56,16 +89,8 @@ public class GroupHelper extends HelperBase {
 		click(By.name("update"));
 		return this;
 	}
-
-	public List<GroupData> getGroups() {
-		List<GroupData> groups = new ArrayList<GroupData>();
-		List<WebElement> checkboxes = driver.findElements(By.name("selected[]"));
-		for (WebElement checkbox : checkboxes) {
-			String title = checkbox.getAttribute("title");
-			String name = title.substring("Select (".length(), title.length() - ")".length());
-			groups.add(new GroupData().withName(name));
-		}
-		return groups;
+	
+	public void submitGroupDeletion() {
+		click(By.name("delete"));
 	}
-
 }

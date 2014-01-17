@@ -16,6 +16,22 @@ public class ContactHelper extends HelperBase {
 	public ContactHelper(ApplicationManager manager) {
 		super(manager);
 	}
+	
+	public List<ContactData> getContacts() {
+		List<ContactData> contacts = new ArrayList<ContactData>();
+		List<WebElement> tableRows = driver.findElements(By.name("entry"));
+		for (WebElement row : tableRows) {
+			List<WebElement> cells = row.findElements(By.tagName("td"));
+			String firstName = cells.get(2).getText();
+			String lastName = cells.get(1).getText();
+			contacts.add(new ContactData()
+									.withFirstName(firstName)
+									.withLastName(lastName));
+		}
+		return contacts;
+	}
+	
+	// ----------------------------------------------------------------
 
 	public ContactHelper submitNewContactCreation() {
 		click(By.name("submit"));
@@ -90,19 +106,4 @@ public class ContactHelper extends HelperBase {
 		editOrDeleteContact(indexDeleteOrUpdate);
 		return this;
 	}
-
-	public List<ContactData> getContacts() {
-		List<ContactData> contacts = new ArrayList<ContactData>();
-		List<WebElement> tableRows = driver.findElements(By.name("entry"));
-		for (WebElement row : tableRows) {
-			List<WebElement> cells = row.findElements(By.tagName("td"));
-			String firstName = cells.get(2).getText();
-			String lastName = cells.get(1).getText();
-			contacts.add(new ContactData()
-									.withFirstName(firstName)
-									.withLastName(lastName));
-		}
-		return contacts;
-	}
-
 }

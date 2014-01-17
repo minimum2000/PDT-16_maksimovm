@@ -27,7 +27,7 @@ public class AddressBookTests extends TestBase {
     	.initNewAdressBookCreation()
     	.fillNewContact(contact, CREATION)
     	.submitNewContactCreation();
-    app.navigateTo().homePage();
+    app.navigateTo().mainPage();
     
     // save new state
     List<ContactData> newList = contactHelper.getContacts();

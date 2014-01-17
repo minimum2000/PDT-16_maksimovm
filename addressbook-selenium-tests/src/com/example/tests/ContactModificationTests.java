@@ -27,7 +27,7 @@ public class ContactModificationTests extends TestBase {
 			.editContact(index)
 			.fillNewContact(contact, MODIFICATION)
 			.updateContact(1); 
-		app.navigateTo().homePage();
+		app.navigateTo().mainPage();
 		
 		// save new state
 	    List<ContactData> newList = app.getContactHelper().getContacts();
@@ -54,7 +54,7 @@ public class ContactModificationTests extends TestBase {
 		app.getContactHelper().editContactAnotherModification(index);
 		app.getContactHelper().fillNewContact(contact, MODIFICATION);
 		app.getContactHelper().updateContact(1);
-		app.navigateTo().homePage();
+		app.navigateTo().mainPage();
 		
 		// save new state
 	    List<ContactData> newList = app.getContactHelper().getContacts();

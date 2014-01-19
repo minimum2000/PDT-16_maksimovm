@@ -27,7 +27,7 @@ public class ContactHelper extends HelperBase {
 	}
 	
 	private void rebuildCache() {
-		SortedListOf<ContactData> cachedContacts = new SortedListOf<ContactData>();
+		cachedContacts = new SortedListOf<ContactData>();
 		
 		manager.navigateTo().mainPage();
 		List<WebElement> tableRows = driver.findElements(By.name("entry"));

@@ -67,4 +67,13 @@ public abstract class HelperBase {
 		new Select(driver.findElement(locator)).selectByVisibleText(text);
 		}
 	}
+	
+/*	private boolean isElementPresent(By by) {
+	    driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
+	    try {
+	      return driver.findElements(by).size() > 0;
+	    } finally {
+	      driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	    }
+	}*/
 }

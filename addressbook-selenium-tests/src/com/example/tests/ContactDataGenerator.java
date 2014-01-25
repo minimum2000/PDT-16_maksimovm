@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import com.thoughtworks.xstream.XStream;
+
 public class ContactDataGenerator {
 
 	public static void main(String[] args) throws IOException {
@@ -36,15 +38,20 @@ public class ContactDataGenerator {
 		}
 	}
 
-	private static void saveContactsToXmlFile(List<ContactData> groups,
-			File file) {
-		// TODO Auto-generated method stub
-		
+	private static void saveContactsToXmlFile(List<ContactData> contacts,
+			File file) throws IOException {
+		XStream xstream = new XStream();
+		xstream.alias("contact", ContactData.class);
+		String xml = xstream.toXML(contacts);
+		FileWriter writer = new FileWriter(file);
+		writer.write(xml);
+		writer.close();
 	}
 	
 	public static List<ContactData> loadContactsFromXmlFile(File file) throws IOException {
-		// TODO Auto-generated method stub
-		return null;
+		XStream xstream = new XStream();
+		xstream.alias("contact", ContactData.class);
+		return (List<ContactData>) xstream.fromXML(file);
 	}
 
 	private static void saveContactsToCsvFile(List<ContactData> contacts,

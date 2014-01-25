@@ -5,7 +5,7 @@ import static com.example.tests.GroupDataGenerator.loadGroupsFromXmlFile;
 import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.assertThat;
 
-import java.io.File;
+import java.io.File; 
 import java.io.IOException;
 import java.util.Iterator;
 

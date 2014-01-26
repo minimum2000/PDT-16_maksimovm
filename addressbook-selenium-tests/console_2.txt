@@ -1,0 +1,82 @@
+
+d:\Курсы\local_version\PDT-16_maksimovm\addressbook-selenium-tests>java -cp bin;
+D:\Курсы\5\xstream-1.4.6\lib\xstream-1.4.6.jar;D:\Курсы\5\xstream-1.4.6\lib\xstr
+eam\xpp3_min-1.1.4c.jar;D:\Курсы\5\xstream-1.4.6\lib\xstream\xmlpull-1.1.3.1.jar
+;D:\Курсы\Подготовка\selenium-2.38.0\selenium-server-standalone-2.38.0.jar -Dcon
+figFile=Firefox.properties org.testng.TestNG testng-customsuite.xml
+[TestNG] Running:
+  D:\╩єЁё√\local_version\PDT-16_maksimovm\addressbook-selenium-tests\testng-cust
+omsuite.xml
+
+SKIPPED: testGroupCreationWithValidData
+java.lang.RuntimeException: com.thoughtworks.xstream.io.StreamException:  : grou
+ps.xml (═х єфрхЄё  эрщЄш єърчрээ√щ Їрщы)
+        at org.testng.internal.MethodInvocationHelper.invokeDataProvider(MethodI
+nvocationHelper.java:161)
+        at org.testng.internal.Parameters.handleParameters(Parameters.java:429)
+        at org.testng.internal.Invoker.handleParameters(Invoker.java:1383)
+        at org.testng.internal.Invoker.createParameters(Invoker.java:1075)
+        at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1180)
+        at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWork
+er.java:127)
+        at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+        at org.testng.TestRunner.privateRun(TestRunner.java:767)
+        at org.testng.TestRunner.run(TestRunner.java:617)
+        at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+        at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+        at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+        at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+        at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+        at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+        at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+        at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+        at org.testng.TestNG.run(TestNG.java:1057)
+        at org.testng.TestNG.privateMain(TestNG.java:1364)
+        at org.testng.TestNG.main(TestNG.java:1333)
+Caused by: com.thoughtworks.xstream.io.StreamException:  : groups.xml (═х єфрхЄё
+  эрщЄш єърчрээ√щ Їрщы)
+        at com.thoughtworks.xstream.io.AbstractDriver.createReader(AbstractDrive
+r.java:76)
+        at com.thoughtworks.xstream.XStream.fromXML(XStream.java:1103)
+        at com.thoughtworks.xstream.XStream.fromXML(XStream.java:1047)
+        at com.example.tests.GroupDataGenerator.loadGroupsFromXmlFile(GroupDataG
+enerator.java:55)
+        at com.example.tests.GroupCreationTests.groupsFromFile(GroupCreationTest
+s.java:22)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+        at java.lang.reflect.Method.invoke(Unknown Source)
+        at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocat
+ionHelper.java:84)
+        at org.testng.internal.MethodInvocationHelper.invokeDataProvider(MethodI
+nvocationHelper.java:153)
+        ... 19 more
+Caused by: java.io.FileNotFoundException: groups.xml (═х єфрхЄё  эрщЄш єърчрээ√щ
+ Їрщы)
+        at java.io.FileInputStream.open(Native Method)
+        at java.io.FileInputStream.<init>(Unknown Source)
+        at com.thoughtworks.xstream.io.AbstractDriver.createReader(AbstractDrive
+r.java:74)
+        ... 29 more
+
+
+===============================================
+    Default test
+    Tests run: 1, Failures: 0, Skips: 1
+===============================================
+
+
+===============================================
+Default suite
+Total tests run: 1, Failures: 1, Skips: 0
+===============================================
+
+[TestNG] Time taken by org.testng.reporters.JUnitReportReporter@3bcc97a9: 8 ms
+[TestNG] Time taken by [FailedReporter passed=0 failed=0 skipped=0]: 6 ms
+[TestNG] Time taken by org.testng.reporters.XMLReporter@1ce9d39c: 6 ms
+[TestNG] Time taken by org.testng.reporters.EmailableReporter2@a5b9d44: 5 ms
+[TestNG] Time taken by org.testng.reporters.SuiteHTMLReporter@1fa4f2fd: 18 ms
+[TestNG] Time taken by org.testng.reporters.jq.Main@1ae40317: 28 ms
+
+d:\Курсы\local_version\PDT-16_maksimovm\addressbook-selenium-tests>

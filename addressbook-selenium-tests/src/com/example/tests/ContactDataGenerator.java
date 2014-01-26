@@ -9,10 +9,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import com.example.fw.ApplicationManager;
 import com.thoughtworks.xstream.XStream;
 
 public class ContactDataGenerator {
 
+	static protected ApplicationManager app;
+	
 	public static void main(String[] args) throws IOException {
 		if (args.length <3) {
 			System.out.println("Please specify parameters: <amount of test data> <file> <format>");

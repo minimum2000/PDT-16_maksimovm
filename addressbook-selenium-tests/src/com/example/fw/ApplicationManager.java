@@ -32,7 +32,7 @@ public class ApplicationManager {
 	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	    driver.get(baseUrl);
 	}
-	
+
 	public void stop() {
 	    driver.quit();
 	}

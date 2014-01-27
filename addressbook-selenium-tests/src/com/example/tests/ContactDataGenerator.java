@@ -7,6 +7,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 import java.util.Random;
 
 import com.example.fw.ApplicationManager;
@@ -29,6 +30,11 @@ public class ContactDataGenerator {
 			System.out.println("File exists, please remote it manually:" + file);
 			return;
 		}
+		
+		String configFile = System.getProperty("configFile", "application.properties");
+        Properties properties = new Properties();
+        properties.load(new FileReader(new File(configFile)));
+        app = new ApplicationManager(properties);
 		
 		List<ContactData> contacts = generateRandomContacts(amount);
 		if ("csv".equals(format)) {

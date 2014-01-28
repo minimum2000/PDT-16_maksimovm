@@ -1,2 +1,2 @@
 del groups.txt
-java -cp bin com.example.tests.GroupDataGenerator 10 groups.txt csv
+java -cp -DconfigFile=firefox.properties bin com.example.tests.GroupDataGenerator 10 groups.txt csv

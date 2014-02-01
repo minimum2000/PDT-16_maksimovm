@@ -22,6 +22,6 @@ public class TestBase {
 	
 	@AfterTest
 	public void tearDown() throws Exception {
-		app.stop();
+		ApplicationManager.getInstance().stop();
 	}
 }

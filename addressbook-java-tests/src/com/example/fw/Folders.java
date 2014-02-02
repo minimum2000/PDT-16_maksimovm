@@ -6,6 +6,7 @@ import java.util.List;
 public class Folders {
 
 	private List<String> storedFolders = null;
+	private List<String> deletedFolders = null;
 	
 	public Folders(List<String> folders) {
 		this.storedFolders = new ArrayList<String>(folders);
@@ -14,6 +15,12 @@ public class Folders {
 	public Folders withAdded(String folder) {
 		Folders newList = new Folders(storedFolders);
 		newList.storedFolders.add(folder);
+		return newList;
+	}
+	
+	public Folders without(String folder) {
+		Folders newList = new Folders(deletedFolders);
+		newList.deletedFolders.remove(folder);
 		return newList;
 	}
 
@@ -45,8 +52,6 @@ public class Folders {
 
 	@Override
 	public String toString() {
-		return "Folders [" + storedFolders + "]";
+		return "Folders [" + storedFolders + "]" + "Deleted Folders [" + deletedFolders + "]";
 	}
-	
-	
 }

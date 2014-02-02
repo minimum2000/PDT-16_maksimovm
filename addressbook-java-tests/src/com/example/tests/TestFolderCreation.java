@@ -44,4 +44,13 @@ public class TestFolderCreation extends TestBase {
 		Folders newFolders2 = app.getFolderHelper().getFolders();
 		assertThat(newFolders2, equalTo(newFolders));		
 	}
+	
+	@Test
+	public void testFolderDeletion() {
+		String folder = "newfolder";
+		Folders oldFolders = app.getFolderHelper().getFolders();
+		app.getFolderHelper().deleteFolder(folder);
+		Folders newFolders = app.getFolderHelper().getFolders();
+		assertThat(newFolders, equalTo(oldFolders.without(folder)));
+	}
 }

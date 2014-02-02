@@ -35,7 +35,7 @@ public class FolderHelper extends HelpersBase {
 	}
 
 	public String deleteFolder(String folder) {
-		manager.getMenuHelper().pushDeleteFolder(2);
+		manager.getMenuHelper().pushDeleteFolder(1);
 		JDialogOperator dialog = new JDialogOperator(mainFrame);
 		new JButtonOperator(dialog, "Yes").push();
 		return waitMessageDialog("AddressBook: Confirm", 2000);

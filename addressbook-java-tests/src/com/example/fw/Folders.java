@@ -19,8 +19,8 @@ public class Folders {
 	}
 	
 	public Folders without(String folder) {
-		Folders newList = new Folders(deletedFolders);
-		newList.deletedFolders.remove(folder);
+		Folders newList = new Folders(storedFolders);
+		newList.storedFolders.remove(folder);
 		return newList;
 	}
 

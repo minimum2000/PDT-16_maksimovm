@@ -10,10 +10,12 @@ public class ApplicationManager {
 	private Properties props;
 	private ContactHelper contactHelper;
 	private ProcessHelper processHelper;
+	private AutoItHelper autoItHelper;
 	
-	public static ApplicationManager getInstance() throws IOException {
+	public static ApplicationManager getInstance(Properties properties) throws IOException {
 		if (singleton == null) {
 			singleton = new ApplicationManager();
+			singleton.setProperties(properties);
 			singleton.start();
 		}
 		return singleton;
@@ -42,11 +44,17 @@ public class ApplicationManager {
 		return contactHelper;
 	}
 	
+	public AutoItHelper getAutoItHelper() {
+		if (autoItHelper == null) {
+			autoItHelper = new AutoItHelper(this);
+		}
+		return autoItHelper;
+	}
+	
 	public ProcessHelper getProcessHelper() {
 		if (processHelper == null) {
 			processHelper = new ProcessHelper(this);
 		}
 		return processHelper;
 	}
-
 }

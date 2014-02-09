@@ -18,11 +18,12 @@ public class TestBase {
 	    String configFile = System.getProperty("configFile", "application.properties");
 		Properties properties = new Properties();
 		properties.load(new FileReader(new File(configFile)));
+		app = ApplicationManager.getInstance(properties);
 		app = new ApplicationManager();
 	}
 	
 	@AfterTest
 	public void tearDown() throws Exception {
-		ApplicationManager.getInstance().stop();
+		ApplicationManager.getInstance(null).stop();
 	}
 }

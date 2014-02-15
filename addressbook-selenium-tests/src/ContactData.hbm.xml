@@ -15,7 +15,7 @@
  <property name="birthMonth" column="bmonth" />
  <property name="birthYear" column="byear" />
  <property name="secondaryAddress" column="address2" />
- <property name="homeField" column="homeField" />
+ <property name="homeField" column="phone2" />
  </class>
 </hibernate-mapping>
 

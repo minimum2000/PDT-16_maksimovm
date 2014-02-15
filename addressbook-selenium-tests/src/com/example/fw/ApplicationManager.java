@@ -25,6 +25,7 @@ public class ApplicationManager {
 		this.properties = properties;
 		model = new ApplicationModel();
 		model.setGroups(getHibernateHelper().listGroups());
+		model.setContacts(getHibernateHelper().listContacts());
 	}
 
 	public void stop() {
@@ -79,5 +80,9 @@ public class ApplicationManager {
 		    driver.get(baseUrl);
 		    }
 		return driver;
+	}
+	
+	public String getProperty(String key) {
+		return properties.getProperty(key);
 	}
 }

@@ -14,7 +14,7 @@ public class ContactModificationTests extends TestBase {
 	@Test(dataProvider = "randomValidContactGenerator")
 	public void modifySomeContact(ContactData contact) {
 		// save old state
-		SortedListOf<ContactData> oldList = app.getContactHelper().getContacts();
+		SortedListOf<ContactData> oldList = app.getContactHelper().getUiContacts();
 	    
 	    Random rnd = new Random();
 	    int index = rnd.nextInt(oldList.size()-1);
@@ -23,7 +23,7 @@ public class ContactModificationTests extends TestBase {
 	    app.getContactHelper().modifyContact(index, contact);
 		
 		// save new state
-	    SortedListOf<ContactData> newList = app.getContactHelper().getContacts();
+	    SortedListOf<ContactData> newList = app.getContactHelper().getUiContacts();
 	    
 	    // compare states
 	    assertThat(newList, equalTo(oldList.without(index).withAdded(contact)));
@@ -32,7 +32,7 @@ public class ContactModificationTests extends TestBase {
 	@Test(dataProvider = "randomValidContactGenerator")
 	public void anotherContactModification(ContactData contact){
 		// save old state
-		SortedListOf<ContactData> oldList = app.getContactHelper().getContacts();
+		SortedListOf<ContactData> oldList = app.getContactHelper().getUiContacts();
 
 	    Random rnd = new Random();
 	    int index = rnd.nextInt(oldList.size()-1);
@@ -41,7 +41,7 @@ public class ContactModificationTests extends TestBase {
 	    app.getContactHelper().anotherModifyContact(index, contact);
 		
 		// save new state
-	    SortedListOf<ContactData> newList = app.getContactHelper().getContacts();
+	    SortedListOf<ContactData> newList = app.getContactHelper().getUiContacts();
 	    
 	    // compare states
 	    assertThat(newList, equalTo(oldList.without(index).withAdded(contact)));

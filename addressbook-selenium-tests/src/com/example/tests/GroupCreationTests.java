@@ -33,7 +33,7 @@ public class GroupCreationTests extends TestBase {
     app.getGroupHelper().createGroup(group);
     
     // save new state
-    SortedListOf<GroupData> newList = app.getGroupHelper().getGroups();
+    SortedListOf<GroupData> newList = app.getModel().getGroups();
     
     // compare states
     assertThat(newList, equalTo(oldList.withAdded(group)));

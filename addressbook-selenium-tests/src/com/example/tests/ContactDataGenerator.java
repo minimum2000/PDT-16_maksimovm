@@ -157,7 +157,7 @@ public class ContactDataGenerator {
 	  
 	  public static String generateRandomGroupSelect() {
 		  app.navigateTo().groupsPage();
-		  List<GroupData> groups = app.getGroupHelper().getGroups();
+		  List<GroupData> groups = app.getModel().getGroups();
 		  int listSize = groups.size();
 		  Random rnd = new Random();
 		  if (rnd.nextInt(3) == 0) {

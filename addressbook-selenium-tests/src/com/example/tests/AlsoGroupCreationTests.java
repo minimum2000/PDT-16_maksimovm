@@ -13,14 +13,14 @@ public class AlsoGroupCreationTests extends TestBase {
 	 @Test(dataProvider = "randomValidGroupGenerator")
 	  public void testGroupCreationWithValidData(GroupData group) throws Exception {
 		// save old state
-		    List<GroupData> oldList = app.getGroupHelper().getGroups();
+		    List<GroupData> oldList = app.getModel().getGroups();
 		    
 		    // actions
 		    
 		    app.getGroupHelper().createGroup(group);
 		    
 		    // save new state
-		    List<GroupData> newList = app.getGroupHelper().getGroups();
+		    List<GroupData> newList = app.getModel().getGroups();
 		    
 		    // compare states
 		    oldList.add(group);

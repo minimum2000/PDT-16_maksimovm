@@ -2,6 +2,7 @@ package com.example.tests;
 
 public class ContactData implements Comparable<ContactData> {
 	
+	private String id;
 	private String firstName;
 	private String lastName;
 	private String address;
@@ -206,6 +207,70 @@ public class ContactData implements Comparable<ContactData> {
 
 	public String getHomeField() {
 		return homeField;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public void setHomePhone(String homePhone) {
+		this.homePhone = homePhone;
+	}
+
+	public void setMobilePhone(String mobilePhone) {
+		this.mobilePhone = mobilePhone;
+	}
+
+	public void setWorkPhone(String workPhone) {
+		this.workPhone = workPhone;
+	}
+
+	public void setFirstEmail(String firstEmail) {
+		this.firstEmail = firstEmail;
+	}
+
+	public void setSecondaryEmail(String secondaryEmail) {
+		this.secondaryEmail = secondaryEmail;
+	}
+
+	public void setBirthDay(String birthDay) {
+		this.birthDay = birthDay;
+	}
+
+	public void setBirthMonth(String birthMonth) {
+		this.birthMonth = birthMonth;
+	}
+
+	public void setBirthYear(String birthYear) {
+		this.birthYear = birthYear;
+	}
+
+	public void setGroupSelect(String groupSelect) {
+		this.groupSelect = groupSelect;
+	}
+
+	public void setSecondaryAddress(String secondaryAddress) {
+		this.secondaryAddress = secondaryAddress;
+	}
+
+	public void setHomeField(String homeField) {
+		this.homeField = homeField;
 	}
 	
 }

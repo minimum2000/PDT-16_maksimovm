@@ -15,8 +15,8 @@ public class Sample {
 		Properties properties = new Properties();
 		properties.load(new FileReader(new File("Firefox.properties")));
 		ApplicationManager app = new ApplicationManager(properties);
-		JdbcHelper jdbc = new JdbcHelper(app, "jdbc:mysql://localhost/addressbook?user=root&password=");
-		System.out.println(jdbc.listGroups());
+		//JdbcHelper jdbc = new JdbcHelper(app, "jdbc:mysql://localhost/addressbook?user=root&password=");
+		System.out.println(app.getHibernateHelper().listGroups());
 	}
 
 }

@@ -22,10 +22,11 @@ public class GroupCreationTests extends TestBase {
 		return wrapGroupsForDataProvider(loadGroupsFromXmlFile(new File("groups.xml"))).iterator();
 	}
 
-@Test(dataProvider = "groupsFromFile")
+ @Test(dataProvider = "groupsFromFile")
   public void testGroupCreationWithValidData(GroupData group) throws Exception {
 	// save old state
-	SortedListOf<GroupData> oldList = app.getGroupHelper().getGroups();
+	SortedListOf<GroupData> oldList 
+		= new SortedListOf<GroupData>(app.getHibernateHelper().listGroups());
     
     // actions
     

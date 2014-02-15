@@ -23,8 +23,9 @@ public class AddressBookTests extends TestBase {
 @Test(dataProvider = "contactsFromFile")
   public void testAddressBookWithValidData(ContactData contact) throws Exception {
     // save old state
-	SortedListOf<ContactData> oldList = app.getContactHelper().getContacts();
-    
+	SortedListOf<ContactData> oldList 
+		= new SortedListOf<ContactData>(app.getHibernateHelper().listContacts());
+   
     // actions
     app.getContactHelper().createContact(contact);
 

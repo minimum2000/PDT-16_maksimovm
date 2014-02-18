@@ -23,6 +23,8 @@ public class ContactHelper extends WebDriverHelperBase {
     	fillNewContact(contact, CREATION);
     	submitNewContactCreation();
     	manager.navigateTo().mainPage();
+    	// update model
+    	manager.getModel().addContact(contact);
     	return this;
 	}
 	

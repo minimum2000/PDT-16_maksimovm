@@ -33,6 +33,7 @@ public class ContactHelper extends WebDriverHelperBase {
 		selectContactByIndex(indexEdit);
 		editOrDeleteContact(deleteButton);
 		manager.navigateTo().mainPage();
+		manager.getModel().removeContact(indexEdit);
 		return this;
 	}
 	
@@ -41,6 +42,7 @@ public class ContactHelper extends WebDriverHelperBase {
 		contactDetail(detailButton);
 		editOrDeleteContact(indexDeleteOrUpdate);
 		manager.navigateTo().mainPage();
+		manager.getModel().removeContact(indexDeleteOrUpdate);
 		return this;
 	}
 
@@ -50,6 +52,7 @@ public class ContactHelper extends WebDriverHelperBase {
 		fillNewContact(contact, MODIFICATION);
 		updateContact(1); 
 		manager.navigateTo().mainPage();
+		manager.getModel().removeContact(index).addContact(contact);
 		return this;
 	}
 	
@@ -59,6 +62,7 @@ public class ContactHelper extends WebDriverHelperBase {
 		fillNewContact(contact, MODIFICATION);
 		updateContact(1);
 		manager.navigateTo().mainPage();
+		manager.getModel().removeContact(index).addContact(contact);
 		return this;
 	}
 	// ----------------------------------------------------------------

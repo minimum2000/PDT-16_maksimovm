@@ -8,19 +8,7 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Hamcrest"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/XStream1"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/MySQL"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Hibernate"/>
-	<classpathentry kind="lib" path="D:/Kyrs/lab8/hibernate-search-5.0.0.Alpha1/dist/lib/required/antlr-2.7.7.jar"/>
-	<classpathentry kind="lib" path="D:/Kyrs/lab8/hibernate-search-5.0.0.Alpha1/dist/lib/required/dom4j-1.6.1.jar"/>
-	<classpathentry kind="lib" path="D:/Kyrs/lab8/hibernate-search-5.0.0.Alpha1/dist/lib/required/hibernate-commons-annotations-4.0.4.Final.jar"/>
-	<classpathentry kind="lib" path="D:/Kyrs/lab8/hibernate-search-5.0.0.Alpha1/dist/lib/required/hibernate-core-4.3.1.Final.jar"/>
-	<classpathentry kind="lib" path="D:/Kyrs/lab8/hibernate-search-5.0.0.Alpha1/dist/lib/required/jandex-1.1.0.Final.jar"/>
-	<classpathentry kind="lib" path="D:/Kyrs/lab8/hibernate-search-5.0.0.Alpha1/dist/lib/required/javassist-3.18.1-GA.jar"/>
-	<classpathentry kind="lib" path="D:/Kyrs/lab8/hibernate-search-5.0.0.Alpha1/dist/lib/required/jboss-logging-3.1.3.GA.jar"/>
-	<classpathentry kind="lib" path="D:/Kyrs/lab8/hibernate-search-5.0.0.Alpha1/dist/lib/required/lucene-core-4.6.1.jar"/>
-	<classpathentry kind="lib" path="D:/Kyrs/lab8/hibernate-search-5.0.0.Alpha1/dist/lib/required/xml-apis-1.3.03.jar"/>
-	<classpathentry kind="lib" path="D:/Kyrs/lab8/hibernate-search-5.0.0.Alpha1/dist/lib/provided/hibernate-jpa-2.1-api-1.0.0.Final.jar"/>
-	<classpathentry kind="lib" path="D:/Kyrs/lab8/hibernate-search-5.0.0.Alpha1/dist/lib/provided/jms-1.1.jar"/>
-	<classpathentry kind="lib" path="D:/Kyrs/lab8/hibernate-search-5.0.0.Alpha1/dist/lib/provided/jsr250-api-1.0.jar"/>
-	<classpathentry kind="lib" path="D:/Kyrs/lab8/hibernate-search-5.0.0.Alpha1/dist/lib/provided/jta-1.1.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Hibernate1"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SQL1"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

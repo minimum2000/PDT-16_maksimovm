@@ -1,0 +1,403 @@
+[TestNG] Running:
+  C:\Users\maksimovm\AppData\Local\Temp\testng-eclipse--1350501191\testng-customsuite.xml
+
+фев 19, 2014 10:07:33 AM org.hibernate.annotations.common.reflection.java.JavaReflectionManager <clinit>
+INFO: HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+фев 19, 2014 10:07:33 AM org.hibernate.Version logVersion
+INFO: HHH000412: Hibernate Core {4.3.1.Final}
+фев 19, 2014 10:07:33 AM org.hibernate.cfg.Environment <clinit>
+INFO: HHH000206: hibernate.properties not found
+фев 19, 2014 10:07:33 AM org.hibernate.cfg.Environment buildBytecodeProvider
+INFO: HHH000021: Bytecode provider name : javassist
+фев 19, 2014 10:07:34 AM org.hibernate.cfg.Configuration configure
+INFO: HHH000043: Configuring from resource: /hibernate.cfg.xml
+фев 19, 2014 10:07:34 AM org.hibernate.cfg.Configuration getConfigurationInputStream
+INFO: HHH000040: Configuration resource: /hibernate.cfg.xml
+фев 19, 2014 10:07:34 AM org.hibernate.internal.util.xml.DTDEntityResolver resolveEntity
+WARN: HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+фев 19, 2014 10:07:34 AM org.hibernate.cfg.Configuration addResource
+INFO: HHH000221: Reading mappings from resource: GroupData.hbm.xml
+фев 19, 2014 10:07:34 AM org.hibernate.internal.util.xml.DTDEntityResolver resolveEntity
+WARN: HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+фев 19, 2014 10:07:34 AM org.hibernate.cfg.Configuration addResource
+INFO: HHH000221: Reading mappings from resource: ContactData.hbm.xml
+фев 19, 2014 10:07:34 AM org.hibernate.internal.util.xml.DTDEntityResolver resolveEntity
+WARN: HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+фев 19, 2014 10:07:34 AM org.hibernate.cfg.Configuration doConfigure
+INFO: HHH000041: Configured SessionFactory: null
+фев 19, 2014 10:07:34 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+WARN: HHH000402: Using Hibernate built-in connection pool (not for production use!)
+фев 19, 2014 10:07:34 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+INFO: HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/addressbook]
+фев 19, 2014 10:07:34 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+INFO: HHH000046: Connection properties: {user=root, password=****}
+фев 19, 2014 10:07:34 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+INFO: HHH000006: Autocommit mode: false
+фев 19, 2014 10:07:34 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+INFO: HHH000115: Hibernate connection pool size: 20 (min=1)
+фев 19, 2014 10:07:34 AM org.hibernate.dialect.Dialect <init>
+INFO: HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+фев 19, 2014 10:07:35 AM org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory <init>
+INFO: HHH000397: Using ASTQueryTranslatorFactory
+Hibernate: select groupdata0_.group_id as group_id1_1_, groupdata0_.group_name as group_na2_1_, groupdata0_.group_header as group_he3_1_, groupdata0_.group_footer as group_fo4_1_ from group_list groupdata0_
+Hibernate: select contactdat0_.id as id1_0_, contactdat0_.firstname as firstnam2_0_, contactdat0_.lastname as lastname3_0_, contactdat0_.address as address4_0_, contactdat0_.home as home5_0_, contactdat0_.mobile as mobile6_0_, contactdat0_.work as work7_0_, contactdat0_.email as email8_0_, contactdat0_.email2 as email9_0_, contactdat0_.bday as bday10_0_, contactdat0_.bmonth as bmonth11_0_, contactdat0_.byear as byear12_0_, contactdat0_.address2 as address13_0_, contactdat0_.phone2 as phone14_0_ from addressbook contactdat0_
+FAILED: testAddressBookWithValidData(ContactData [firstName=, lastName=test449554403, address=, mobilePhone=test-182750538, firstEmail=test-681888606, birthDay=12, birthMonth=June, birthYear=, groupSelect=])
+java.lang.AssertionError: 
+Expected: <[ContactData [firstName=, lastName=, address=, mobilePhone=, firstEmail=, birthDay=0, birthMonth=-, birthYear=, groupSelect=null], ContactData [firstName=, lastName=, address=, mobilePhone=, firstEmail=, birthDay=0, birthMonth=-, birthYear=, groupSelect=null], ContactData [firstName=, lastName=, address=, mobilePhone=, firstEmail=, birthDay=0, birthMonth=-, birthYear=, groupSelect=null], ContactData [firstName=Cidr, lastName=Cidorovich, address=Leikenshtrasse 12, mobilePhone=, firstEmail=test1@test.test, birthDay=15, birthMonth=February, birthYear=1997, groupSelect=null], ContactData [firstName=Ivanov, lastName=Ivan, address=Monkey Island, mobilePhone=89111111111, firstEmail=test@test.test, birthDay=3, birthMonth=June, birthYear=1845, groupSelect=null], ContactData [firstName=first name, lastName=last name, address=address, mobilePhone=mobile telephone, firstEmail=first e-mail, birthDay=10, birthMonth=July, birthYear=1845, groupSelect=null], ContactData [firstName=first name 1, lastName=last name 1, address=address 1, mobilePhone=mobile telephone 1, firstEmail=first e-mail, birthDay=10, birthMonth=July, birthYear=1845, groupSelect=null], ContactData [firstName=first name 1, lastName=last name 1, address=address 1, mobilePhone=mobile telephone 1, firstEmail=first e-mail, birthDay=10, birthMonth=July, birthYear=1845, groupSelect=null], ContactData [firstName=first name 1, lastName=last name 1, address=address 1, mobilePhone=mobile telephone 1, firstEmail=first e-mail, birthDay=10, birthMonth=July, birthYear=1845, groupSelect=null], ContactData [firstName=first name 1, lastName=last name 1, address=address 1, mobilePhone=mobile telephone 1, firstEmail=first e-mail, birthDay=10, birthMonth=July, birthYear=1845, groupSelect=null], ContactData [firstName=Petr, lastName=Petrov, address=Leningradskij pr., mobilePhone=, firstEmail=, birthDay=11, birthMonth=October, birthYear=1974, groupSelect=null], ContactData [firstName=, lastName=test-1261671487, address=test-867348679, mobilePhone=test720801716, firstEmail=test-7720866, birthDay=7, birthMonth=May, birthYear=test, groupSelect=null], ContactData [firstName=, lastName=test-1594397561, address=, mobilePhone=, firstEmail=test971982412, birthDay=22, birthMonth=September, birthYear=test, groupSelect=null], ContactData [firstName=test-372775449, lastName=test-286174820, address=test-1460064987, mobilePhone=, firstEmail=, birthDay=30, birthMonth=March, birthYear=test, groupSelect=null], ContactData [firstName=test1827425820, lastName=test-28999319, address=, mobilePhone=, firstEmail=, birthDay=22, birthMonth=-, birthYear=, groupSelect=null], ContactData [firstName=test-1508743155, lastName=test1816797120, address=test-1979551994, mobilePhone=, firstEmail=, birthDay=30, birthMonth=July, birthYear=test, groupSelect=null], ContactData [firstName=, lastName=test449554403, address=, mobilePhone=test-182750538, firstEmail=test-681888606, birthDay=12, birthMonth=June, birthYear=, groupSelect=null], ContactData [firstName=, lastName=test449554403, address=, mobilePhone=test-182750538, firstEmail=test-681888606, birthDay=12, birthMonth=June, birthYear=, groupSelect=], ContactData [firstName=, lastName=test449554403, address=, mobilePhone=test-182750538, firstEmail=test-681888606, birthDay=12, birthMonth=June, birthYear=, groupSelect=], ContactData [firstName=test4413035, lastName=test742961086, address=, mobilePhone=test-1918915421, firstEmail=test-133773432, birthDay=5, birthMonth=October, birthYear=test, groupSelect=null]]>
+     but: was <[ContactData [firstName=, lastName=, address=, mobilePhone=, firstEmail=, birthDay=0, birthMonth=-, birthYear=, groupSelect=null], ContactData [firstName=, lastName=, address=, mobilePhone=, firstEmail=, birthDay=0, birthMonth=-, birthYear=, groupSelect=null], ContactData [firstName=, lastName=, address=, mobilePhone=, firstEmail=, birthDay=0, birthMonth=-, birthYear=, groupSelect=null], ContactData [firstName=Cidr, lastName=Cidorovich, address=Leikenshtrasse 12, mobilePhone=, firstEmail=test1@test.test, birthDay=15, birthMonth=February, birthYear=1997, groupSelect=null], ContactData [firstName=Ivanov, lastName=Ivan, address=Monkey Island, mobilePhone=89111111111, firstEmail=test@test.test, birthDay=3, birthMonth=June, birthYear=1845, groupSelect=null], ContactData [firstName=first name, lastName=last name, address=address, mobilePhone=mobile telephone, firstEmail=first e-mail, birthDay=10, birthMonth=July, birthYear=1845, groupSelect=null], ContactData [firstName=first name 1, lastName=last name 1, address=address 1, mobilePhone=mobile telephone 1, firstEmail=first e-mail, birthDay=10, birthMonth=July, birthYear=1845, groupSelect=null], ContactData [firstName=first name 1, lastName=last name 1, address=address 1, mobilePhone=mobile telephone 1, firstEmail=first e-mail, birthDay=10, birthMonth=July, birthYear=1845, groupSelect=null], ContactData [firstName=first name 1, lastName=last name 1, address=address 1, mobilePhone=mobile telephone 1, firstEmail=first e-mail, birthDay=10, birthMonth=July, birthYear=1845, groupSelect=null], ContactData [firstName=first name 1, lastName=last name 1, address=address 1, mobilePhone=mobile telephone 1, firstEmail=first e-mail, birthDay=10, birthMonth=July, birthYear=1845, groupSelect=null], ContactData [firstName=Petr, lastName=Petrov, address=Leningradskij pr., mobilePhone=, firstEmail=, birthDay=11, birthMonth=October, birthYear=1974, groupSelect=null], ContactData [firstName=, lastName=test-1261671487, address=test-867348679, mobilePhone=test720801716, firstEmail=test-7720866, birthDay=7, birthMonth=May, birthYear=test, groupSelect=null], ContactData [firstName=, lastName=test-1594397561, address=, mobilePhone=, firstEmail=test971982412, birthDay=22, birthMonth=September, birthYear=test, groupSelect=null], ContactData [firstName=test-372775449, lastName=test-286174820, address=test-1460064987, mobilePhone=, firstEmail=, birthDay=30, birthMonth=March, birthYear=test, groupSelect=null], ContactData [firstName=test1827425820, lastName=test-28999319, address=, mobilePhone=, firstEmail=, birthDay=22, birthMonth=-, birthYear=, groupSelect=null], ContactData [firstName=test-1508743155, lastName=test1816797120, address=test-1979551994, mobilePhone=, firstEmail=, birthDay=30, birthMonth=July, birthYear=test, groupSelect=null], ContactData [firstName=, lastName=test449554403, address=, mobilePhone=test-182750538, firstEmail=test-681888606, birthDay=12, birthMonth=June, birthYear=, groupSelect=null], ContactData [firstName=, lastName=test449554403, address=, mobilePhone=test-182750538, firstEmail=test-681888606, birthDay=12, birthMonth=June, birthYear=, groupSelect=], ContactData [firstName=test4413035, lastName=test742961086, address=, mobilePhone=test-1918915421, firstEmail=test-133773432, birthDay=5, birthMonth=October, birthYear=test, groupSelect=null]]>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at org.junit.Assert.assertThat(Assert.java:865)
+	at org.junit.Assert.assertThat(Assert.java:832)
+	at com.example.tests.AddressBookTests.testAddressBookWithValidData(AddressBookTests.java:36)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+
+FAILED: testAddressBookWithValidData(ContactData [firstName=, lastName=test1095493784, address=, mobilePhone=test1558311924, firstEmail=, birthDay=-, birthMonth=March, birthYear=test-607855956, groupSelect=test-830951560])
+org.openqa.selenium.NoSuchElementException: Cannot locate element with text: test-830951560
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.39.0', revision: 'ff23eac', time: '2013-12-16 16:11:15'
+System info: host: 'spbpc89', ip: '172.16.6.67', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_45'
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:147)
+	at com.example.fw.WebDriverHelperBase.selectByText(WebDriverHelperBase.java:67)
+	at com.example.fw.ContactHelper.fillNewContact(ContactHelper.java:104)
+	at com.example.fw.ContactHelper.createContact(ContactHelper.java:23)
+	at com.example.tests.AddressBookTests.testAddressBookWithValidData(AddressBookTests.java:30)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+
+FAILED: testAddressBookWithValidData(ContactData [firstName=test-1394615055, lastName=test-796488891, address=, mobilePhone=test-202637589, firstEmail=test443692948, birthDay=20, birthMonth=February, birthYear=, groupSelect=test1457336502])
+org.openqa.selenium.NoSuchElementException: Cannot locate element with text: test1457336502
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.39.0', revision: 'ff23eac', time: '2013-12-16 16:11:15'
+System info: host: 'spbpc89', ip: '172.16.6.67', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_45'
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:147)
+	at com.example.fw.WebDriverHelperBase.selectByText(WebDriverHelperBase.java:67)
+	at com.example.fw.ContactHelper.fillNewContact(ContactHelper.java:104)
+	at com.example.fw.ContactHelper.createContact(ContactHelper.java:23)
+	at com.example.tests.AddressBookTests.testAddressBookWithValidData(AddressBookTests.java:30)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+
+FAILED: testAddressBookWithValidData(ContactData [firstName=test539191830, lastName=test-1690733475, address=test1477644200, mobilePhone=test1848942259, firstEmail=test928111098, birthDay=-, birthMonth=June, birthYear=test-1113411349, groupSelect=[none]])
+java.lang.AssertionError: 
+Expected: <[ContactData [firstName=, lastName=, address=, mobilePhone=, firstEmail=, birthDay=0, birthMonth=-, birthYear=, groupSelect=null], ContactData [firstName=, lastName=, address=, mobilePhone=, firstEmail=, birthDay=0, birthMonth=-, birthYear=, groupSelect=null], ContactData [firstName=, lastName=, address=, mobilePhone=, firstEmail=, birthDay=0, birthMonth=-, birthYear=, groupSelect=null], ContactData [firstName=Cidr, lastName=Cidorovich, address=Leikenshtrasse 12, mobilePhone=, firstEmail=test1@test.test, birthDay=15, birthMonth=February, birthYear=1997, groupSelect=null], ContactData [firstName=Ivanov, lastName=Ivan, address=Monkey Island, mobilePhone=89111111111, firstEmail=test@test.test, birthDay=3, birthMonth=June, birthYear=1845, groupSelect=null], ContactData [firstName=first name, lastName=last name, address=address, mobilePhone=mobile telephone, firstEmail=first e-mail, birthDay=10, birthMonth=July, birthYear=1845, groupSelect=null], ContactData [firstName=first name 1, lastName=last name 1, address=address 1, mobilePhone=mobile telephone 1, firstEmail=first e-mail, birthDay=10, birthMonth=July, birthYear=1845, groupSelect=null], ContactData [firstName=first name 1, lastName=last name 1, address=address 1, mobilePhone=mobile telephone 1, firstEmail=first e-mail, birthDay=10, birthMonth=July, birthYear=1845, groupSelect=null], ContactData [firstName=first name 1, lastName=last name 1, address=address 1, mobilePhone=mobile telephone 1, firstEmail=first e-mail, birthDay=10, birthMonth=July, birthYear=1845, groupSelect=null], ContactData [firstName=first name 1, lastName=last name 1, address=address 1, mobilePhone=mobile telephone 1, firstEmail=first e-mail, birthDay=10, birthMonth=July, birthYear=1845, groupSelect=null], ContactData [firstName=Petr, lastName=Petrov, address=Leningradskij pr., mobilePhone=, firstEmail=, birthDay=11, birthMonth=October, birthYear=1974, groupSelect=null], ContactData [firstName=, lastName=test-1261671487, address=test-867348679, mobilePhone=test720801716, firstEmail=test-7720866, birthDay=7, birthMonth=May, birthYear=test, groupSelect=null], ContactData [firstName=, lastName=test-1594397561, address=, mobilePhone=, firstEmail=test971982412, birthDay=22, birthMonth=September, birthYear=test, groupSelect=null], ContactData [firstName=test539191830, lastName=test-1690733475, address=test1477644200, mobilePhone=test1848942259, firstEmail=test928111098, birthDay=-, birthMonth=June, birthYear=test-1113411349, groupSelect=[none]], ContactData [firstName=test539191830, lastName=test-1690733475, address=test1477644200, mobilePhone=test1848942259, firstEmail=test928111098, birthDay=-, birthMonth=June, birthYear=test-1113411349, groupSelect=[none]], ContactData [firstName=test-372775449, lastName=test-286174820, address=test-1460064987, mobilePhone=, firstEmail=, birthDay=30, birthMonth=March, birthYear=test, groupSelect=null], ContactData [firstName=test1827425820, lastName=test-28999319, address=, mobilePhone=, firstEmail=, birthDay=22, birthMonth=-, birthYear=, groupSelect=null], ContactData [firstName=test-1508743155, lastName=test1816797120, address=test-1979551994, mobilePhone=, firstEmail=, birthDay=30, birthMonth=July, birthYear=test, groupSelect=null], ContactData [firstName=, lastName=test449554403, address=, mobilePhone=test-182750538, firstEmail=test-681888606, birthDay=12, birthMonth=June, birthYear=, groupSelect=null], ContactData [firstName=, lastName=test449554403, address=, mobilePhone=test-182750538, firstEmail=test-681888606, birthDay=12, birthMonth=June, birthYear=, groupSelect=], ContactData [firstName=test4413035, lastName=test742961086, address=, mobilePhone=test-1918915421, firstEmail=test-133773432, birthDay=5, birthMonth=October, birthYear=test, groupSelect=null]]>
+     but: was <[ContactData [firstName=, lastName=, address=, mobilePhone=, firstEmail=, birthDay=0, birthMonth=-, birthYear=, groupSelect=null], ContactData [firstName=, lastName=, address=, mobilePhone=, firstEmail=, birthDay=0, birthMonth=-, birthYear=, groupSelect=null], ContactData [firstName=, lastName=, address=, mobilePhone=, firstEmail=, birthDay=0, birthMonth=-, birthYear=, groupSelect=null], ContactData [firstName=Cidr, lastName=Cidorovich, address=Leikenshtrasse 12, mobilePhone=, firstEmail=test1@test.test, birthDay=15, birthMonth=February, birthYear=1997, groupSelect=null], ContactData [firstName=Ivanov, lastName=Ivan, address=Monkey Island, mobilePhone=89111111111, firstEmail=test@test.test, birthDay=3, birthMonth=June, birthYear=1845, groupSelect=null], ContactData [firstName=first name, lastName=last name, address=address, mobilePhone=mobile telephone, firstEmail=first e-mail, birthDay=10, birthMonth=July, birthYear=1845, groupSelect=null], ContactData [firstName=first name 1, lastName=last name 1, address=address 1, mobilePhone=mobile telephone 1, firstEmail=first e-mail, birthDay=10, birthMonth=July, birthYear=1845, groupSelect=null], ContactData [firstName=first name 1, lastName=last name 1, address=address 1, mobilePhone=mobile telephone 1, firstEmail=first e-mail, birthDay=10, birthMonth=July, birthYear=1845, groupSelect=null], ContactData [firstName=first name 1, lastName=last name 1, address=address 1, mobilePhone=mobile telephone 1, firstEmail=first e-mail, birthDay=10, birthMonth=July, birthYear=1845, groupSelect=null], ContactData [firstName=first name 1, lastName=last name 1, address=address 1, mobilePhone=mobile telephone 1, firstEmail=first e-mail, birthDay=10, birthMonth=July, birthYear=1845, groupSelect=null], ContactData [firstName=Petr, lastName=Petrov, address=Leningradskij pr., mobilePhone=, firstEmail=, birthDay=11, birthMonth=October, birthYear=1974, groupSelect=null], ContactData [firstName=, lastName=test-1261671487, address=test-867348679, mobilePhone=test720801716, firstEmail=test-7720866, birthDay=7, birthMonth=May, birthYear=test, groupSelect=null], ContactData [firstName=, lastName=test-1594397561, address=, mobilePhone=, firstEmail=test971982412, birthDay=22, birthMonth=September, birthYear=test, groupSelect=null], ContactData [firstName=test539191830, lastName=test-1690733475, address=test1477644200, mobilePhone=test1848942259, firstEmail=test928111098, birthDay=-, birthMonth=June, birthYear=test-1113411349, groupSelect=[none]], ContactData [firstName=test-372775449, lastName=test-286174820, address=test-1460064987, mobilePhone=, firstEmail=, birthDay=30, birthMonth=March, birthYear=test, groupSelect=null], ContactData [firstName=test1827425820, lastName=test-28999319, address=, mobilePhone=, firstEmail=, birthDay=22, birthMonth=-, birthYear=, groupSelect=null], ContactData [firstName=test-1508743155, lastName=test1816797120, address=test-1979551994, mobilePhone=, firstEmail=, birthDay=30, birthMonth=July, birthYear=test, groupSelect=null], ContactData [firstName=, lastName=test449554403, address=, mobilePhone=test-182750538, firstEmail=test-681888606, birthDay=12, birthMonth=June, birthYear=, groupSelect=null], ContactData [firstName=, lastName=test449554403, address=, mobilePhone=test-182750538, firstEmail=test-681888606, birthDay=12, birthMonth=June, birthYear=, groupSelect=], ContactData [firstName=test4413035, lastName=test742961086, address=, mobilePhone=test-1918915421, firstEmail=test-133773432, birthDay=5, birthMonth=October, birthYear=test, groupSelect=null]]>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at org.junit.Assert.assertThat(Assert.java:865)
+	at org.junit.Assert.assertThat(Assert.java:832)
+	at com.example.tests.AddressBookTests.testAddressBookWithValidData(AddressBookTests.java:36)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+
+FAILED: testAddressBookWithValidData(ContactData [firstName=test-4565272, lastName=, address=test1453894297, mobilePhone=, firstEmail=test-10027918, birthDay=26, birthMonth=August, birthYear=, groupSelect=group name 1])
+java.lang.AssertionError: 
+Expected: <[ContactData [firstName=, lastName=, address=, mobilePhone=, firstEmail=, birthDay=0, birthMonth=-, birthYear=, groupSelect=null], ContactData [firstName=, lastName=, address=, mobilePhone=, firstEmail=, birthDay=0, birthMonth=-, birthYear=, groupSelect=null], ContactData [firstName=, lastName=, address=, mobilePhone=, firstEmail=, birthDay=0, birthMonth=-, birthYear=, groupSelect=null], ContactData [firstName=test-4565272, lastName=, address=test1453894297, mobilePhone=, firstEmail=test-10027918, birthDay=26, birthMonth=August, birthYear=, groupSelect=group name 1], ContactData [firstName=test-4565272, lastName=, address=test1453894297, mobilePhone=, firstEmail=test-10027918, birthDay=26, birthMonth=August, birthYear=, groupSelect=group name 1], ContactData [firstName=Cidr, lastName=Cidorovich, address=Leikenshtrasse 12, mobilePhone=, firstEmail=test1@test.test, birthDay=15, birthMonth=February, birthYear=1997, groupSelect=null], ContactData [firstName=Ivanov, lastName=Ivan, address=Monkey Island, mobilePhone=89111111111, firstEmail=test@test.test, birthDay=3, birthMonth=June, birthYear=1845, groupSelect=null], ContactData [firstName=first name, lastName=last name, address=address, mobilePhone=mobile telephone, firstEmail=first e-mail, birthDay=10, birthMonth=July, birthYear=1845, groupSelect=null], ContactData [firstName=first name 1, lastName=last name 1, address=address 1, mobilePhone=mobile telephone 1, firstEmail=first e-mail, birthDay=10, birthMonth=July, birthYear=1845, groupSelect=null], ContactData [firstName=first name 1, lastName=last name 1, address=address 1, mobilePhone=mobile telephone 1, firstEmail=first e-mail, birthDay=10, birthMonth=July, birthYear=1845, groupSelect=null], ContactData [firstName=first name 1, lastName=last name 1, address=address 1, mobilePhone=mobile telephone 1, firstEmail=first e-mail, birthDay=10, birthMonth=July, birthYear=1845, groupSelect=null], ContactData [firstName=first name 1, lastName=last name 1, address=address 1, mobilePhone=mobile telephone 1, firstEmail=first e-mail, birthDay=10, birthMonth=July, birthYear=1845, groupSelect=null], ContactData [firstName=Petr, lastName=Petrov, address=Leningradskij pr., mobilePhone=, firstEmail=, birthDay=11, birthMonth=October, birthYear=1974, groupSelect=null], ContactData [firstName=, lastName=test-1261671487, address=test-867348679, mobilePhone=test720801716, firstEmail=test-7720866, birthDay=7, birthMonth=May, birthYear=test, groupSelect=null], ContactData [firstName=, lastName=test-1594397561, address=, mobilePhone=, firstEmail=test971982412, birthDay=22, birthMonth=September, birthYear=test, groupSelect=null], ContactData [firstName=test539191830, lastName=test-1690733475, address=test1477644200, mobilePhone=test1848942259, firstEmail=test928111098, birthDay=-, birthMonth=June, birthYear=test-1113411349, groupSelect=[none]], ContactData [firstName=test-372775449, lastName=test-286174820, address=test-1460064987, mobilePhone=, firstEmail=, birthDay=30, birthMonth=March, birthYear=test, groupSelect=null], ContactData [firstName=test1827425820, lastName=test-28999319, address=, mobilePhone=, firstEmail=, birthDay=22, birthMonth=-, birthYear=, groupSelect=null], ContactData [firstName=test-1508743155, lastName=test1816797120, address=test-1979551994, mobilePhone=, firstEmail=, birthDay=30, birthMonth=July, birthYear=test, groupSelect=null], ContactData [firstName=, lastName=test449554403, address=, mobilePhone=test-182750538, firstEmail=test-681888606, birthDay=12, birthMonth=June, birthYear=, groupSelect=null], ContactData [firstName=, lastName=test449554403, address=, mobilePhone=test-182750538, firstEmail=test-681888606, birthDay=12, birthMonth=June, birthYear=, groupSelect=], ContactData [firstName=test4413035, lastName=test742961086, address=, mobilePhone=test-1918915421, firstEmail=test-133773432, birthDay=5, birthMonth=October, birthYear=test, groupSelect=null]]>
+     but: was <[ContactData [firstName=, lastName=, address=, mobilePhone=, firstEmail=, birthDay=0, birthMonth=-, birthYear=, groupSelect=null], ContactData [firstName=, lastName=, address=, mobilePhone=, firstEmail=, birthDay=0, birthMonth=-, birthYear=, groupSelect=null], ContactData [firstName=, lastName=, address=, mobilePhone=, firstEmail=, birthDay=0, birthMonth=-, birthYear=, groupSelect=null], ContactData [firstName=test-4565272, lastName=, address=test1453894297, mobilePhone=, firstEmail=test-10027918, birthDay=26, birthMonth=August, birthYear=, groupSelect=group name 1], ContactData [firstName=Cidr, lastName=Cidorovich, address=Leikenshtrasse 12, mobilePhone=, firstEmail=test1@test.test, birthDay=15, birthMonth=February, birthYear=1997, groupSelect=null], ContactData [firstName=Ivanov, lastName=Ivan, address=Monkey Island, mobilePhone=89111111111, firstEmail=test@test.test, birthDay=3, birthMonth=June, birthYear=1845, groupSelect=null], ContactData [firstName=first name, lastName=last name, address=address, mobilePhone=mobile telephone, firstEmail=first e-mail, birthDay=10, birthMonth=July, birthYear=1845, groupSelect=null], ContactData [firstName=first name 1, lastName=last name 1, address=address 1, mobilePhone=mobile telephone 1, firstEmail=first e-mail, birthDay=10, birthMonth=July, birthYear=1845, groupSelect=null], ContactData [firstName=first name 1, lastName=last name 1, address=address 1, mobilePhone=mobile telephone 1, firstEmail=first e-mail, birthDay=10, birthMonth=July, birthYear=1845, groupSelect=null], ContactData [firstName=first name 1, lastName=last name 1, address=address 1, mobilePhone=mobile telephone 1, firstEmail=first e-mail, birthDay=10, birthMonth=July, birthYear=1845, groupSelect=null], ContactData [firstName=first name 1, lastName=last name 1, address=address 1, mobilePhone=mobile telephone 1, firstEmail=first e-mail, birthDay=10, birthMonth=July, birthYear=1845, groupSelect=null], ContactData [firstName=Petr, lastName=Petrov, address=Leningradskij pr., mobilePhone=, firstEmail=, birthDay=11, birthMonth=October, birthYear=1974, groupSelect=null], ContactData [firstName=, lastName=test-1261671487, address=test-867348679, mobilePhone=test720801716, firstEmail=test-7720866, birthDay=7, birthMonth=May, birthYear=test, groupSelect=null], ContactData [firstName=, lastName=test-1594397561, address=, mobilePhone=, firstEmail=test971982412, birthDay=22, birthMonth=September, birthYear=test, groupSelect=null], ContactData [firstName=test539191830, lastName=test-1690733475, address=test1477644200, mobilePhone=test1848942259, firstEmail=test928111098, birthDay=-, birthMonth=June, birthYear=test-1113411349, groupSelect=[none]], ContactData [firstName=test-372775449, lastName=test-286174820, address=test-1460064987, mobilePhone=, firstEmail=, birthDay=30, birthMonth=March, birthYear=test, groupSelect=null], ContactData [firstName=test1827425820, lastName=test-28999319, address=, mobilePhone=, firstEmail=, birthDay=22, birthMonth=-, birthYear=, groupSelect=null], ContactData [firstName=test-1508743155, lastName=test1816797120, address=test-1979551994, mobilePhone=, firstEmail=, birthDay=30, birthMonth=July, birthYear=test, groupSelect=null], ContactData [firstName=, lastName=test449554403, address=, mobilePhone=test-182750538, firstEmail=test-681888606, birthDay=12, birthMonth=June, birthYear=, groupSelect=null], ContactData [firstName=, lastName=test449554403, address=, mobilePhone=test-182750538, firstEmail=test-681888606, birthDay=12, birthMonth=June, birthYear=, groupSelect=], ContactData [firstName=test4413035, lastName=test742961086, address=, mobilePhone=test-1918915421, firstEmail=test-133773432, birthDay=5, birthMonth=October, birthYear=test, groupSelect=null]]>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at org.junit.Assert.assertThat(Assert.java:865)
+	at org.junit.Assert.assertThat(Assert.java:832)
+	at com.example.tests.AddressBookTests.testAddressBookWithValidData(AddressBookTests.java:36)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+
+FAILED: testAddressBookWithValidData(ContactData [firstName=, lastName=test1377386678, address=test473296638, mobilePhone=test1456114547, firstEmail=, birthDay=-, birthMonth=July, birthYear=test1735140336, groupSelect=[none]])
+java.lang.AssertionError: 
+Expected: <[ContactData [firstName=, lastName=, address=, mobilePhone=, firstEmail=, birthDay=0, birthMonth=-, birthYear=, groupSelect=null], ContactData [firstName=, lastName=, address=, mobilePhone=, firstEmail=, birthDay=0, birthMonth=-, birthYear=, groupSelect=null], ContactData [firstName=, lastName=, address=, mobilePhone=, firstEmail=, birthDay=0, birthMonth=-, birthYear=, groupSelect=null], ContactData [firstName=test-4565272, lastName=, address=test1453894297, mobilePhone=, firstEmail=test-10027918, birthDay=26, birthMonth=August, birthYear=, groupSelect=group name 1], ContactData [firstName=Cidr, lastName=Cidorovich, address=Leikenshtrasse 12, mobilePhone=, firstEmail=test1@test.test, birthDay=15, birthMonth=February, birthYear=1997, groupSelect=null], ContactData [firstName=Ivanov, lastName=Ivan, address=Monkey Island, mobilePhone=89111111111, firstEmail=test@test.test, birthDay=3, birthMonth=June, birthYear=1845, groupSelect=null], ContactData [firstName=first name, lastName=last name, address=address, mobilePhone=mobile telephone, firstEmail=first e-mail, birthDay=10, birthMonth=July, birthYear=1845, groupSelect=null], ContactData [firstName=first name 1, lastName=last name 1, address=address 1, mobilePhone=mobile telephone 1, firstEmail=first e-mail, birthDay=10, birthMonth=July, birthYear=1845, groupSelect=null], ContactData [firstName=first name 1, lastName=last name 1, address=address 1, mobilePhone=mobile telephone 1, firstEmail=first e-mail, birthDay=10, birthMonth=July, birthYear=1845, groupSelect=null], ContactData [firstName=first name 1, lastName=last name 1, address=address 1, mobilePhone=mobile telephone 1, firstEmail=first e-mail, birthDay=10, birthMonth=July, birthYear=1845, groupSelect=null], ContactData [firstName=first name 1, lastName=last name 1, address=address 1, mobilePhone=mobile telephone 1, firstEmail=first e-mail, birthDay=10, birthMonth=July, birthYear=1845, groupSelect=null], ContactData [firstName=Petr, lastName=Petrov, address=Leningradskij pr., mobilePhone=, firstEmail=, birthDay=11, birthMonth=October, birthYear=1974, groupSelect=null], ContactData [firstName=, lastName=test-1261671487, address=test-867348679, mobilePhone=test720801716, firstEmail=test-7720866, birthDay=7, birthMonth=May, birthYear=test, groupSelect=null], ContactData [firstName=, lastName=test-1594397561, address=, mobilePhone=, firstEmail=test971982412, birthDay=22, birthMonth=September, birthYear=test, groupSelect=null], ContactData [firstName=test539191830, lastName=test-1690733475, address=test1477644200, mobilePhone=test1848942259, firstEmail=test928111098, birthDay=-, birthMonth=June, birthYear=test-1113411349, groupSelect=[none]], ContactData [firstName=test-372775449, lastName=test-286174820, address=test-1460064987, mobilePhone=, firstEmail=, birthDay=30, birthMonth=March, birthYear=test, groupSelect=null], ContactData [firstName=test1827425820, lastName=test-28999319, address=, mobilePhone=, firstEmail=, birthDay=22, birthMonth=-, birthYear=, groupSelect=null], ContactData [firstName=, lastName=test1377386678, address=test473296638, mobilePhone=test1456114547, firstEmail=, birthDay=-, birthMonth=July, birthYear=test1735140336, groupSelect=[none]], ContactData [firstName=, lastName=test1377386678, address=test473296638, mobilePhone=test1456114547, firstEmail=, birthDay=-, birthMonth=July, birthYear=test1735140336, groupSelect=[none]], ContactData [firstName=test-1508743155, lastName=test1816797120, address=test-1979551994, mobilePhone=, firstEmail=, birthDay=30, birthMonth=July, birthYear=test, groupSelect=null], ContactData [firstName=, lastName=test449554403, address=, mobilePhone=test-182750538, firstEmail=test-681888606, birthDay=12, birthMonth=June, birthYear=, groupSelect=null], ContactData [firstName=, lastName=test449554403, address=, mobilePhone=test-182750538, firstEmail=test-681888606, birthDay=12, birthMonth=June, birthYear=, groupSelect=], ContactData [firstName=test4413035, lastName=test742961086, address=, mobilePhone=test-1918915421, firstEmail=test-133773432, birthDay=5, birthMonth=October, birthYear=test, groupSelect=null]]>
+     but: was <[ContactData [firstName=, lastName=, address=, mobilePhone=, firstEmail=, birthDay=0, birthMonth=-, birthYear=, groupSelect=null], ContactData [firstName=, lastName=, address=, mobilePhone=, firstEmail=, birthDay=0, birthMonth=-, birthYear=, groupSelect=null], ContactData [firstName=, lastName=, address=, mobilePhone=, firstEmail=, birthDay=0, birthMonth=-, birthYear=, groupSelect=null], ContactData [firstName=test-4565272, lastName=, address=test1453894297, mobilePhone=, firstEmail=test-10027918, birthDay=26, birthMonth=August, birthYear=, groupSelect=group name 1], ContactData [firstName=Cidr, lastName=Cidorovich, address=Leikenshtrasse 12, mobilePhone=, firstEmail=test1@test.test, birthDay=15, birthMonth=February, birthYear=1997, groupSelect=null], ContactData [firstName=Ivanov, lastName=Ivan, address=Monkey Island, mobilePhone=89111111111, firstEmail=test@test.test, birthDay=3, birthMonth=June, birthYear=1845, groupSelect=null], ContactData [firstName=first name, lastName=last name, address=address, mobilePhone=mobile telephone, firstEmail=first e-mail, birthDay=10, birthMonth=July, birthYear=1845, groupSelect=null], ContactData [firstName=first name 1, lastName=last name 1, address=address 1, mobilePhone=mobile telephone 1, firstEmail=first e-mail, birthDay=10, birthMonth=July, birthYear=1845, groupSelect=null], ContactData [firstName=first name 1, lastName=last name 1, address=address 1, mobilePhone=mobile telephone 1, firstEmail=first e-mail, birthDay=10, birthMonth=July, birthYear=1845, groupSelect=null], ContactData [firstName=first name 1, lastName=last name 1, address=address 1, mobilePhone=mobile telephone 1, firstEmail=first e-mail, birthDay=10, birthMonth=July, birthYear=1845, groupSelect=null], ContactData [firstName=first name 1, lastName=last name 1, address=address 1, mobilePhone=mobile telephone 1, firstEmail=first e-mail, birthDay=10, birthMonth=July, birthYear=1845, groupSelect=null], ContactData [firstName=Petr, lastName=Petrov, address=Leningradskij pr., mobilePhone=, firstEmail=, birthDay=11, birthMonth=October, birthYear=1974, groupSelect=null], ContactData [firstName=, lastName=test-1261671487, address=test-867348679, mobilePhone=test720801716, firstEmail=test-7720866, birthDay=7, birthMonth=May, birthYear=test, groupSelect=null], ContactData [firstName=, lastName=test-1594397561, address=, mobilePhone=, firstEmail=test971982412, birthDay=22, birthMonth=September, birthYear=test, groupSelect=null], ContactData [firstName=test539191830, lastName=test-1690733475, address=test1477644200, mobilePhone=test1848942259, firstEmail=test928111098, birthDay=-, birthMonth=June, birthYear=test-1113411349, groupSelect=[none]], ContactData [firstName=test-372775449, lastName=test-286174820, address=test-1460064987, mobilePhone=, firstEmail=, birthDay=30, birthMonth=March, birthYear=test, groupSelect=null], ContactData [firstName=test1827425820, lastName=test-28999319, address=, mobilePhone=, firstEmail=, birthDay=22, birthMonth=-, birthYear=, groupSelect=null], ContactData [firstName=, lastName=test1377386678, address=test473296638, mobilePhone=test1456114547, firstEmail=, birthDay=-, birthMonth=July, birthYear=test1735140336, groupSelect=[none]], ContactData [firstName=test-1508743155, lastName=test1816797120, address=test-1979551994, mobilePhone=, firstEmail=, birthDay=30, birthMonth=July, birthYear=test, groupSelect=null], ContactData [firstName=, lastName=test449554403, address=, mobilePhone=test-182750538, firstEmail=test-681888606, birthDay=12, birthMonth=June, birthYear=, groupSelect=null], ContactData [firstName=, lastName=test449554403, address=, mobilePhone=test-182750538, firstEmail=test-681888606, birthDay=12, birthMonth=June, birthYear=, groupSelect=], ContactData [firstName=test4413035, lastName=test742961086, address=, mobilePhone=test-1918915421, firstEmail=test-133773432, birthDay=5, birthMonth=October, birthYear=test, groupSelect=null]]>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at org.junit.Assert.assertThat(Assert.java:865)
+	at org.junit.Assert.assertThat(Assert.java:832)
+	at com.example.tests.AddressBookTests.testAddressBookWithValidData(AddressBookTests.java:36)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+
+FAILED: testAddressBookWithValidData(ContactData [firstName=test2021746579, lastName=test2143919627, address=, mobilePhone=test2098390809, firstEmail=, birthDay=12, birthMonth=March, birthYear=, groupSelect=test-901056428])
+org.openqa.selenium.NoSuchElementException: Cannot locate element with text: test-901056428
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.39.0', revision: 'ff23eac', time: '2013-12-16 16:11:15'
+System info: host: 'spbpc89', ip: '172.16.6.67', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_45'
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:147)
+	at com.example.fw.WebDriverHelperBase.selectByText(WebDriverHelperBase.java:67)
+	at com.example.fw.ContactHelper.fillNewContact(ContactHelper.java:104)
+	at com.example.fw.ContactHelper.createContact(ContactHelper.java:23)
+	at com.example.tests.AddressBookTests.testAddressBookWithValidData(AddressBookTests.java:30)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+
+FAILED: testAddressBookWithValidData(ContactData [firstName=, lastName=, address=, mobilePhone=test1748296948, firstEmail=test1101347813, birthDay=7, birthMonth=-, birthYear=test217435519, groupSelect=new_name])
+java.lang.AssertionError: 
+Expected: <[ContactData [firstName=, lastName=, address=, mobilePhone=, firstEmail=, birthDay=0, birthMonth=-, birthYear=, groupSelect=null], ContactData [firstName=, lastName=, address=, mobilePhone=, firstEmail=, birthDay=0, birthMonth=-, birthYear=, groupSelect=null], ContactData [firstName=, lastName=, address=, mobilePhone=, firstEmail=, birthDay=0, birthMonth=-, birthYear=, groupSelect=null], ContactData [firstName=, lastName=, address=, mobilePhone=test1748296948, firstEmail=test1101347813, birthDay=7, birthMonth=-, birthYear=test217435519, groupSelect=new_name], ContactData [firstName=, lastName=, address=, mobilePhone=test1748296948, firstEmail=test1101347813, birthDay=7, birthMonth=-, birthYear=test217435519, groupSelect=new_name], ContactData [firstName=test-4565272, lastName=, address=test1453894297, mobilePhone=, firstEmail=test-10027918, birthDay=26, birthMonth=August, birthYear=, groupSelect=group name 1], ContactData [firstName=Cidr, lastName=Cidorovich, address=Leikenshtrasse 12, mobilePhone=, firstEmail=test1@test.test, birthDay=15, birthMonth=February, birthYear=1997, groupSelect=null], ContactData [firstName=Ivanov, lastName=Ivan, address=Monkey Island, mobilePhone=89111111111, firstEmail=test@test.test, birthDay=3, birthMonth=June, birthYear=1845, groupSelect=null], ContactData [firstName=first name, lastName=last name, address=address, mobilePhone=mobile telephone, firstEmail=first e-mail, birthDay=10, birthMonth=July, birthYear=1845, groupSelect=null], ContactData [firstName=first name 1, lastName=last name 1, address=address 1, mobilePhone=mobile telephone 1, firstEmail=first e-mail, birthDay=10, birthMonth=July, birthYear=1845, groupSelect=null], ContactData [firstName=first name 1, lastName=last name 1, address=address 1, mobilePhone=mobile telephone 1, firstEmail=first e-mail, birthDay=10, birthMonth=July, birthYear=1845, groupSelect=null], ContactData [firstName=first name 1, lastName=last name 1, address=address 1, mobilePhone=mobile telephone 1, firstEmail=first e-mail, birthDay=10, birthMonth=July, birthYear=1845, groupSelect=null], ContactData [firstName=first name 1, lastName=last name 1, address=address 1, mobilePhone=mobile telephone 1, firstEmail=first e-mail, birthDay=10, birthMonth=July, birthYear=1845, groupSelect=null], ContactData [firstName=Petr, lastName=Petrov, address=Leningradskij pr., mobilePhone=, firstEmail=, birthDay=11, birthMonth=October, birthYear=1974, groupSelect=null], ContactData [firstName=, lastName=test-1261671487, address=test-867348679, mobilePhone=test720801716, firstEmail=test-7720866, birthDay=7, birthMonth=May, birthYear=test, groupSelect=null], ContactData [firstName=, lastName=test-1594397561, address=, mobilePhone=, firstEmail=test971982412, birthDay=22, birthMonth=September, birthYear=test, groupSelect=null], ContactData [firstName=test539191830, lastName=test-1690733475, address=test1477644200, mobilePhone=test1848942259, firstEmail=test928111098, birthDay=-, birthMonth=June, birthYear=test-1113411349, groupSelect=[none]], ContactData [firstName=test-372775449, lastName=test-286174820, address=test-1460064987, mobilePhone=, firstEmail=, birthDay=30, birthMonth=March, birthYear=test, groupSelect=null], ContactData [firstName=test1827425820, lastName=test-28999319, address=, mobilePhone=, firstEmail=, birthDay=22, birthMonth=-, birthYear=, groupSelect=null], ContactData [firstName=, lastName=test1377386678, address=test473296638, mobilePhone=test1456114547, firstEmail=, birthDay=-, birthMonth=July, birthYear=test1735140336, groupSelect=[none]], ContactData [firstName=test-1508743155, lastName=test1816797120, address=test-1979551994, mobilePhone=, firstEmail=, birthDay=30, birthMonth=July, birthYear=test, groupSelect=null], ContactData [firstName=, lastName=test449554403, address=, mobilePhone=test-182750538, firstEmail=test-681888606, birthDay=12, birthMonth=June, birthYear=, groupSelect=null], ContactData [firstName=, lastName=test449554403, address=, mobilePhone=test-182750538, firstEmail=test-681888606, birthDay=12, birthMonth=June, birthYear=, groupSelect=], ContactData [firstName=test4413035, lastName=test742961086, address=, mobilePhone=test-1918915421, firstEmail=test-133773432, birthDay=5, birthMonth=October, birthYear=test, groupSelect=null]]>
+     but: was <[ContactData [firstName=, lastName=, address=, mobilePhone=, firstEmail=, birthDay=0, birthMonth=-, birthYear=, groupSelect=null], ContactData [firstName=, lastName=, address=, mobilePhone=, firstEmail=, birthDay=0, birthMonth=-, birthYear=, groupSelect=null], ContactData [firstName=, lastName=, address=, mobilePhone=, firstEmail=, birthDay=0, birthMonth=-, birthYear=, groupSelect=null], ContactData [firstName=, lastName=, address=, mobilePhone=test1748296948, firstEmail=test1101347813, birthDay=7, birthMonth=-, birthYear=test217435519, groupSelect=new_name], ContactData [firstName=test-4565272, lastName=, address=test1453894297, mobilePhone=, firstEmail=test-10027918, birthDay=26, birthMonth=August, birthYear=, groupSelect=group name 1], ContactData [firstName=Cidr, lastName=Cidorovich, address=Leikenshtrasse 12, mobilePhone=, firstEmail=test1@test.test, birthDay=15, birthMonth=February, birthYear=1997, groupSelect=null], ContactData [firstName=Ivanov, lastName=Ivan, address=Monkey Island, mobilePhone=89111111111, firstEmail=test@test.test, birthDay=3, birthMonth=June, birthYear=1845, groupSelect=null], ContactData [firstName=first name, lastName=last name, address=address, mobilePhone=mobile telephone, firstEmail=first e-mail, birthDay=10, birthMonth=July, birthYear=1845, groupSelect=null], ContactData [firstName=first name 1, lastName=last name 1, address=address 1, mobilePhone=mobile telephone 1, firstEmail=first e-mail, birthDay=10, birthMonth=July, birthYear=1845, groupSelect=null], ContactData [firstName=first name 1, lastName=last name 1, address=address 1, mobilePhone=mobile telephone 1, firstEmail=first e-mail, birthDay=10, birthMonth=July, birthYear=1845, groupSelect=null], ContactData [firstName=first name 1, lastName=last name 1, address=address 1, mobilePhone=mobile telephone 1, firstEmail=first e-mail, birthDay=10, birthMonth=July, birthYear=1845, groupSelect=null], ContactData [firstName=first name 1, lastName=last name 1, address=address 1, mobilePhone=mobile telephone 1, firstEmail=first e-mail, birthDay=10, birthMonth=July, birthYear=1845, groupSelect=null], ContactData [firstName=Petr, lastName=Petrov, address=Leningradskij pr., mobilePhone=, firstEmail=, birthDay=11, birthMonth=October, birthYear=1974, groupSelect=null], ContactData [firstName=, lastName=test-1261671487, address=test-867348679, mobilePhone=test720801716, firstEmail=test-7720866, birthDay=7, birthMonth=May, birthYear=test, groupSelect=null], ContactData [firstName=, lastName=test-1594397561, address=, mobilePhone=, firstEmail=test971982412, birthDay=22, birthMonth=September, birthYear=test, groupSelect=null], ContactData [firstName=test539191830, lastName=test-1690733475, address=test1477644200, mobilePhone=test1848942259, firstEmail=test928111098, birthDay=-, birthMonth=June, birthYear=test-1113411349, groupSelect=[none]], ContactData [firstName=test-372775449, lastName=test-286174820, address=test-1460064987, mobilePhone=, firstEmail=, birthDay=30, birthMonth=March, birthYear=test, groupSelect=null], ContactData [firstName=test1827425820, lastName=test-28999319, address=, mobilePhone=, firstEmail=, birthDay=22, birthMonth=-, birthYear=, groupSelect=null], ContactData [firstName=, lastName=test1377386678, address=test473296638, mobilePhone=test1456114547, firstEmail=, birthDay=-, birthMonth=July, birthYear=test1735140336, groupSelect=[none]], ContactData [firstName=test-1508743155, lastName=test1816797120, address=test-1979551994, mobilePhone=, firstEmail=, birthDay=30, birthMonth=July, birthYear=test, groupSelect=null], ContactData [firstName=, lastName=test449554403, address=, mobilePhone=test-182750538, firstEmail=test-681888606, birthDay=12, birthMonth=June, birthYear=, groupSelect=null], ContactData [firstName=, lastName=test449554403, address=, mobilePhone=test-182750538, firstEmail=test-681888606, birthDay=12, birthMonth=June, birthYear=, groupSelect=], ContactData [firstName=test4413035, lastName=test742961086, address=, mobilePhone=test-1918915421, firstEmail=test-133773432, birthDay=5, birthMonth=October, birthYear=test, groupSelect=null]]>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at org.junit.Assert.assertThat(Assert.java:865)
+	at org.junit.Assert.assertThat(Assert.java:832)
+	at com.example.tests.AddressBookTests.testAddressBookWithValidData(AddressBookTests.java:36)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+
+FAILED: testAddressBookWithValidData(ContactData [firstName=test1951135193, lastName=, address=, mobilePhone=test-1397338261, firstEmail=test957581818, birthDay=30, birthMonth=March, birthYear=test-1571171882, groupSelect=test1095960208])
+org.openqa.selenium.NoSuchElementException: Cannot locate element with text: test1095960208
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.39.0', revision: 'ff23eac', time: '2013-12-16 16:11:15'
+System info: host: 'spbpc89', ip: '172.16.6.67', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_45'
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:147)
+	at com.example.fw.WebDriverHelperBase.selectByText(WebDriverHelperBase.java:67)
+	at com.example.fw.ContactHelper.fillNewContact(ContactHelper.java:104)
+	at com.example.fw.ContactHelper.createContact(ContactHelper.java:23)
+	at com.example.tests.AddressBookTests.testAddressBookWithValidData(AddressBookTests.java:30)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+
+FAILED: testAddressBookWithValidData(ContactData [firstName=test-287964022, lastName=test-967479525, address=test-1297126601, mobilePhone=test-1820443015, firstEmail=test293408087, birthDay=-, birthMonth=-, birthYear=, groupSelect=])
+java.lang.AssertionError: 
+Expected: <[ContactData [firstName=, lastName=, address=, mobilePhone=, firstEmail=, birthDay=0, birthMonth=-, birthYear=, groupSelect=null], ContactData [firstName=, lastName=, address=, mobilePhone=, firstEmail=, birthDay=0, birthMonth=-, birthYear=, groupSelect=null], ContactData [firstName=, lastName=, address=, mobilePhone=, firstEmail=, birthDay=0, birthMonth=-, birthYear=, groupSelect=null], ContactData [firstName=, lastName=, address=, mobilePhone=test1748296948, firstEmail=test1101347813, birthDay=7, birthMonth=-, birthYear=test217435519, groupSelect=new_name], ContactData [firstName=test-4565272, lastName=, address=test1453894297, mobilePhone=, firstEmail=test-10027918, birthDay=26, birthMonth=August, birthYear=, groupSelect=group name 1], ContactData [firstName=Cidr, lastName=Cidorovich, address=Leikenshtrasse 12, mobilePhone=, firstEmail=test1@test.test, birthDay=15, birthMonth=February, birthYear=1997, groupSelect=null], ContactData [firstName=Ivanov, lastName=Ivan, address=Monkey Island, mobilePhone=89111111111, firstEmail=test@test.test, birthDay=3, birthMonth=June, birthYear=1845, groupSelect=null], ContactData [firstName=first name, lastName=last name, address=address, mobilePhone=mobile telephone, firstEmail=first e-mail, birthDay=10, birthMonth=July, birthYear=1845, groupSelect=null], ContactData [firstName=first name 1, lastName=last name 1, address=address 1, mobilePhone=mobile telephone 1, firstEmail=first e-mail, birthDay=10, birthMonth=July, birthYear=1845, groupSelect=null], ContactData [firstName=first name 1, lastName=last name 1, address=address 1, mobilePhone=mobile telephone 1, firstEmail=first e-mail, birthDay=10, birthMonth=July, birthYear=1845, groupSelect=null], ContactData [firstName=first name 1, lastName=last name 1, address=address 1, mobilePhone=mobile telephone 1, firstEmail=first e-mail, birthDay=10, birthMonth=July, birthYear=1845, groupSelect=null], ContactData [firstName=first name 1, lastName=last name 1, address=address 1, mobilePhone=mobile telephone 1, firstEmail=first e-mail, birthDay=10, birthMonth=July, birthYear=1845, groupSelect=null], ContactData [firstName=Petr, lastName=Petrov, address=Leningradskij pr., mobilePhone=, firstEmail=, birthDay=11, birthMonth=October, birthYear=1974, groupSelect=null], ContactData [firstName=, lastName=test-1261671487, address=test-867348679, mobilePhone=test720801716, firstEmail=test-7720866, birthDay=7, birthMonth=May, birthYear=test, groupSelect=null], ContactData [firstName=, lastName=test-1594397561, address=, mobilePhone=, firstEmail=test971982412, birthDay=22, birthMonth=September, birthYear=test, groupSelect=null], ContactData [firstName=test539191830, lastName=test-1690733475, address=test1477644200, mobilePhone=test1848942259, firstEmail=test928111098, birthDay=-, birthMonth=June, birthYear=test-1113411349, groupSelect=[none]], ContactData [firstName=test-372775449, lastName=test-286174820, address=test-1460064987, mobilePhone=, firstEmail=, birthDay=30, birthMonth=March, birthYear=test, groupSelect=null], ContactData [firstName=test1827425820, lastName=test-28999319, address=, mobilePhone=, firstEmail=, birthDay=22, birthMonth=-, birthYear=, groupSelect=null], ContactData [firstName=test-287964022, lastName=test-967479525, address=test-1297126601, mobilePhone=test-1820443015, firstEmail=test293408087, birthDay=-, birthMonth=-, birthYear=, groupSelect=], ContactData [firstName=test-287964022, lastName=test-967479525, address=test-1297126601, mobilePhone=test-1820443015, firstEmail=test293408087, birthDay=-, birthMonth=-, birthYear=, groupSelect=], ContactData [firstName=, lastName=test1377386678, address=test473296638, mobilePhone=test1456114547, firstEmail=, birthDay=-, birthMonth=July, birthYear=test1735140336, groupSelect=[none]], ContactData [firstName=test-1508743155, lastName=test1816797120, address=test-1979551994, mobilePhone=, firstEmail=, birthDay=30, birthMonth=July, birthYear=test, groupSelect=null], ContactData [firstName=, lastName=test449554403, address=, mobilePhone=test-182750538, firstEmail=test-681888606, birthDay=12, birthMonth=June, birthYear=, groupSelect=null], ContactData [firstName=, lastName=test449554403, address=, mobilePhone=test-182750538, firstEmail=test-681888606, birthDay=12, birthMonth=June, birthYear=, groupSelect=], ContactData [firstName=test4413035, lastName=test742961086, address=, mobilePhone=test-1918915421, firstEmail=test-133773432, birthDay=5, birthMonth=October, birthYear=test, groupSelect=null]]>
+     but: was <[ContactData [firstName=, lastName=, address=, mobilePhone=, firstEmail=, birthDay=0, birthMonth=-, birthYear=, groupSelect=null], ContactData [firstName=, lastName=, address=, mobilePhone=, firstEmail=, birthDay=0, birthMonth=-, birthYear=, groupSelect=null], ContactData [firstName=, lastName=, address=, mobilePhone=, firstEmail=, birthDay=0, birthMonth=-, birthYear=, groupSelect=null], ContactData [firstName=, lastName=, address=, mobilePhone=test1748296948, firstEmail=test1101347813, birthDay=7, birthMonth=-, birthYear=test217435519, groupSelect=new_name], ContactData [firstName=test-4565272, lastName=, address=test1453894297, mobilePhone=, firstEmail=test-10027918, birthDay=26, birthMonth=August, birthYear=, groupSelect=group name 1], ContactData [firstName=Cidr, lastName=Cidorovich, address=Leikenshtrasse 12, mobilePhone=, firstEmail=test1@test.test, birthDay=15, birthMonth=February, birthYear=1997, groupSelect=null], ContactData [firstName=Ivanov, lastName=Ivan, address=Monkey Island, mobilePhone=89111111111, firstEmail=test@test.test, birthDay=3, birthMonth=June, birthYear=1845, groupSelect=null], ContactData [firstName=first name, lastName=last name, address=address, mobilePhone=mobile telephone, firstEmail=first e-mail, birthDay=10, birthMonth=July, birthYear=1845, groupSelect=null], ContactData [firstName=first name 1, lastName=last name 1, address=address 1, mobilePhone=mobile telephone 1, firstEmail=first e-mail, birthDay=10, birthMonth=July, birthYear=1845, groupSelect=null], ContactData [firstName=first name 1, lastName=last name 1, address=address 1, mobilePhone=mobile telephone 1, firstEmail=first e-mail, birthDay=10, birthMonth=July, birthYear=1845, groupSelect=null], ContactData [firstName=first name 1, lastName=last name 1, address=address 1, mobilePhone=mobile telephone 1, firstEmail=first e-mail, birthDay=10, birthMonth=July, birthYear=1845, groupSelect=null], ContactData [firstName=first name 1, lastName=last name 1, address=address 1, mobilePhone=mobile telephone 1, firstEmail=first e-mail, birthDay=10, birthMonth=July, birthYear=1845, groupSelect=null], ContactData [firstName=Petr, lastName=Petrov, address=Leningradskij pr., mobilePhone=, firstEmail=, birthDay=11, birthMonth=October, birthYear=1974, groupSelect=null], ContactData [firstName=, lastName=test-1261671487, address=test-867348679, mobilePhone=test720801716, firstEmail=test-7720866, birthDay=7, birthMonth=May, birthYear=test, groupSelect=null], ContactData [firstName=, lastName=test-1594397561, address=, mobilePhone=, firstEmail=test971982412, birthDay=22, birthMonth=September, birthYear=test, groupSelect=null], ContactData [firstName=test539191830, lastName=test-1690733475, address=test1477644200, mobilePhone=test1848942259, firstEmail=test928111098, birthDay=-, birthMonth=June, birthYear=test-1113411349, groupSelect=[none]], ContactData [firstName=test-372775449, lastName=test-286174820, address=test-1460064987, mobilePhone=, firstEmail=, birthDay=30, birthMonth=March, birthYear=test, groupSelect=null], ContactData [firstName=test1827425820, lastName=test-28999319, address=, mobilePhone=, firstEmail=, birthDay=22, birthMonth=-, birthYear=, groupSelect=null], ContactData [firstName=test-287964022, lastName=test-967479525, address=test-1297126601, mobilePhone=test-1820443015, firstEmail=test293408087, birthDay=-, birthMonth=-, birthYear=, groupSelect=], ContactData [firstName=, lastName=test1377386678, address=test473296638, mobilePhone=test1456114547, firstEmail=, birthDay=-, birthMonth=July, birthYear=test1735140336, groupSelect=[none]], ContactData [firstName=test-1508743155, lastName=test1816797120, address=test-1979551994, mobilePhone=, firstEmail=, birthDay=30, birthMonth=July, birthYear=test, groupSelect=null], ContactData [firstName=, lastName=test449554403, address=, mobilePhone=test-182750538, firstEmail=test-681888606, birthDay=12, birthMonth=June, birthYear=, groupSelect=null], ContactData [firstName=, lastName=test449554403, address=, mobilePhone=test-182750538, firstEmail=test-681888606, birthDay=12, birthMonth=June, birthYear=, groupSelect=], ContactData [firstName=test4413035, lastName=test742961086, address=, mobilePhone=test-1918915421, firstEmail=test-133773432, birthDay=5, birthMonth=October, birthYear=test, groupSelect=null]]>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at org.junit.Assert.assertThat(Assert.java:865)
+	at org.junit.Assert.assertThat(Assert.java:832)
+	at com.example.tests.AddressBookTests.testAddressBookWithValidData(AddressBookTests.java:36)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+
+
+===============================================
+    Default test
+    Tests run: 10, Failures: 10, Skips: 0
+===============================================
+
+
+===============================================
+Default suite
+Total tests run: 10, Failures: 10, Skips: 0
+===============================================
+
+[TestNG] Time taken by org.testng.reporters.SuiteHTMLReporter@74793ec9: 396 ms
+[TestNG] Time taken by org.testng.reporters.JUnitReportReporter@4a1b4407: 84 ms
+[TestNG] Time taken by org.testng.reporters.EmailableReporter2@745b0676: 46 ms
+[TestNG] Time taken by org.testng.reporters.jq.Main@92334e4: 204 ms
+[TestNG] Time taken by org.testng.reporters.XMLReporter@402c507f: 62 ms
+[TestNG] Time taken by [FailedReporter passed=0 failed=0 skipped=0]: 72 ms

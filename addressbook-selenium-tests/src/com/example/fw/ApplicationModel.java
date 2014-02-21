@@ -12,7 +12,7 @@ public class ApplicationModel {
 	private SortedListOf<ContactData> contacts;
 	
 	public SortedListOf<ContactData> getContacts() {
-		return contacts;
+		return new SortedListOf<ContactData>(contacts);
 	}
 
 	public void setContacts(List<ContactData> contacts) {
@@ -20,7 +20,7 @@ public class ApplicationModel {
 	}
 
 	public SortedListOf<GroupData> getGroups() {
-		return groups;
+		return new SortedListOf<GroupData>(groups);
 	}
 	
 	public void setGroups(List<GroupData> groups) {

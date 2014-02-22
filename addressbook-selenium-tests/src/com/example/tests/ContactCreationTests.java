@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 
 import com.example.utils.SortedListOf;
 
-public class AddressBookTests extends TestBase {
+public class ContactCreationTests extends TestBase {
   
   @DataProvider
   	public Iterator<Object[]> contactsFromFile() throws IOException {

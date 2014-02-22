@@ -24,7 +24,8 @@ public class TestBase {
 
 	@BeforeTest
 	public void setUp() throws Exception {
-	    String configFile = System.getProperty("configFile", "Firefox.properties");
+		initAppplicationManager();
+		String configFile = System.getProperty("configFile", "Firefox.properties");
 		Properties properties = new Properties();
 		properties.load(new FileReader(new File(configFile)));
 		app = new ApplicationManager(properties);
@@ -45,11 +46,17 @@ public class TestBase {
 	
 	@AfterTest
 	public void tearDown() throws Exception {
-		app.stop();
+		initAppplicationManager();
+		  app.stop();
 	}
 	
 	@DataProvider
 	  public Iterator<Object[]> randomValidGroupGenerator() {
+		  try {
+			initAppplicationManager();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		  return wrapGroupsForDataProvider(generateRandomGroups(5)).iterator();
 		}
 
@@ -63,7 +70,12 @@ public class TestBase {
 
 	@DataProvider
 	  public Iterator<Object[]> randomValidContactGenerator() {
-		  return wrapContactsForDataProvider(generateRandomContacts(5)).iterator();
+		  try {
+			initAppplicationManager();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		  return wrapContactsForDataProvider(generateRandomContacts(app, 5)).iterator();
 	  }
 	  
 	  public static List<Object[]> wrapContactsForDataProvider(
@@ -74,4 +86,15 @@ public class TestBase {
 			}
 			return list;
 	}
+	  
+	  private void initAppplicationManager() throws Exception {
+		   if (app == null) {
+		        String configFile = System.getProperty("configFile", "Firefox.properties");
+		        Properties properties = new Properties();
+		        properties.load(new FileReader(new File(configFile)));
+		        app = new ApplicationManager(properties);
+		        checkCounter = 0;
+		        checkFrequency = Integer.parseInt(properties.getProperty("check.frequency", "0"));
+		   }
+		 }
 }

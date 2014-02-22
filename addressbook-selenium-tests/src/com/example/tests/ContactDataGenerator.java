@@ -17,6 +17,8 @@ public class ContactDataGenerator {
 
 	static protected ApplicationManager app;
 	
+	
+	
 	public static void main(String[] args) throws IOException {
 		if (args.length <3) {
 			System.out.println("Please specify parameters: <amount of test data> <file> <format>");
@@ -36,7 +38,7 @@ public class ContactDataGenerator {
         properties.load(new FileReader(new File(configFile)));
         app = new ApplicationManager(properties);
 		
-		List<ContactData> contacts = generateRandomContacts(amount);
+		List<ContactData> contacts = generateRandomContacts(app, amount);
 		if ("csv".equals(format)) {
 			saveContactsToCsvFile(contacts, file);
 		} else if ("xml".equals(format)) {
@@ -105,7 +107,7 @@ public class ContactDataGenerator {
 		return list;
 	}
 	
-	public static List<ContactData> generateRandomContacts(int amount) {
+	public static List<ContactData> generateRandomContacts(ApplicationManager app, int amount) {
 		List<ContactData> list = new ArrayList<ContactData>();
 		for (int i = 0; i < amount; i++){
 			ContactData contact = new ContactData()

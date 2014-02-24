@@ -11,7 +11,7 @@ public class SignupTest extends TestBase {
 	public void newUserShouldSignUp() {
 		User user = new User().setLogin("testuser1")
 							  .setPassword("123456")
-							  .setEmail("testuser1@localhost");
+							  .setEmail("testuser1@localhost.localdomain");
 		app.getAccountHelper().signup(user);
 		assertTrue(app.getAccountHelper().isLogged(user));
 	}

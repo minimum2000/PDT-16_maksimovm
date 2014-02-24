@@ -71,4 +71,8 @@ public abstract class WebDriverHelperBase extends HelperBase {
 	protected void openUrl(String string) {
 		driver.get(manager.getProperty("baseUrl") + string);
 	}
+	
+	protected void openAbsoluteUrl(String string) {
+		driver.get(string);
+	}
 }

@@ -17,6 +17,7 @@ public class ApplicationManager {
 	private Properties properties;
 	private HibernateHelper hibernateHelper;
 	private AccountHelper accountHelper;
+	private MailHelper mailHelper;
 	
 	
 	public static ApplicationManager getInstance(){
@@ -67,6 +68,13 @@ public class ApplicationManager {
 			accountHelper = new AccountHelper(this);
 		}
 		return accountHelper;
+	}
+
+	public MailHelper getMailHelper() {
+		if (mailHelper == null) {
+			mailHelper = new MailHelper(this);
+		}
+		return mailHelper;
 	}
 	
 }

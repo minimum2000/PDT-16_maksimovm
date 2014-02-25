@@ -18,7 +18,7 @@ public class TestBase {
 	@BeforeTest
 	public void setUp() throws Exception {
 		initAppplicationManager();
-		String configFile = System.getProperty("configFile", "Firefox.properties");
+		String configFile = System.getProperty("configFile", "application.properties");
 		Properties properties = new Properties();
 		properties.load(new FileReader(new File(configFile)));
 		app = ApplicationManager.getInstance();
@@ -46,7 +46,7 @@ public class TestBase {
 	
 	private void initAppplicationManager() throws Exception {
 		   if (app == null) {
-		        String configFile = System.getProperty("configFile", "Firefox.properties");
+		        String configFile = System.getProperty("configFile", "application.properties");
 		        Properties properties = new Properties();
 		        properties.load(new FileReader(new File(configFile)));
 		        app = ApplicationManager.getInstance();

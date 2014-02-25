@@ -12,5 +12,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/commons-net1"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaMail1"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Selenium"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Selenium_2.4"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

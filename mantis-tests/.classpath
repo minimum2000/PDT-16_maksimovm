@@ -7,5 +7,10 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/MySQL"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaMail"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/commons-net"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Hibernate1"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SQL1"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/commons-net1"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaMail1"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Selenium"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

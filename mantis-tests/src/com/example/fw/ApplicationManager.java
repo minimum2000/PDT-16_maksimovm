@@ -18,6 +18,7 @@ public class ApplicationManager {
 	private HibernateHelper hibernateHelper;
 	private AccountHelper accountHelper;
 	private MailHelper mailHelper;
+	private JamesHelper jamesHelper;
 	
 	
 	public static ApplicationManager getInstance(){
@@ -75,6 +76,13 @@ public class ApplicationManager {
 			mailHelper = new MailHelper(this);
 		}
 		return mailHelper;
+	}
+
+	public JamesHelper getJamesHelper() {
+		if (jamesHelper == null) {
+			jamesHelper = new JamesHelper(this);
+		}
+		return jamesHelper;
 	}
 	
 }

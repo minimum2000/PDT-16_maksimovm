@@ -16,12 +16,16 @@ public class SignupTest extends TestBase {
 	
 	@BeforeClass
 	public void createMailUser() {
+		if (! app.getJamesHelper().doesUserExist(user.login)) {
 		app.getJamesHelper().createUser(user.login, user.password);
+		}
 	}
 	
 	@AfterClass
 	public void deleteUser() {
+		if (app.getJamesHelper().doesUserExist(user.login)) {
 		app.getJamesHelper().deleteUser(user.login);
+		}
 	}
 	
 	@Test

@@ -13,8 +13,7 @@ public class AccountHelper extends WebDriverHelperBase {
 
 	public void signup(User user) {
 		openUrl("/");
-		driver.findElements(By.cssSelector("span.bracket-link")).get(1).click();
-		//click(By.cssSelector("span.bracket-link"));
+		click(By.linkText("Signup for a new account"));
 	    type(By.name("username"), user.login);
 	    type(By.name("email"), user.email);
 	    click(By.cssSelector("input.button"));

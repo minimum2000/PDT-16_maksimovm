@@ -18,6 +18,7 @@ public class AccountHelper extends WebDriverHelperBase {
 	    type(By.name("email"), user.email);
 	    click(By.cssSelector("input.button"));
 	    
+	    pause(3000);
 	    String msg = manager.getMailHelper().getNewMail(user.login, user.password);
 	    String confirmationLink = getConfirmationLink(msg);
 	    openAbsoluteUrl(confirmationLink);
@@ -26,7 +27,7 @@ public class AccountHelper extends WebDriverHelperBase {
 	    type(By.name("password_confirm"), user.password);
 	    click(By.cssSelector("input.button"));
 	}
-	
+
 	public String getConfirmationLink(String text) {
 		Pattern regex = Pattern.compile("http\\S*");
 		Matcher matcher = regex.matcher(text);

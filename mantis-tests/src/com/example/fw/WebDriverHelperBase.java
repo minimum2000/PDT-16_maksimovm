@@ -6,6 +6,7 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 public abstract class WebDriverHelperBase extends HelperBase {
@@ -74,5 +75,13 @@ public abstract class WebDriverHelperBase extends HelperBase {
 	
 	protected void openAbsoluteUrl(String string) {
 		driver.get(string);
+	}
+	
+	protected WebElement findElement (By linkText) {
+		try {
+			return driver.findElement(linkText);
+		} catch (Exception e) {
+			return null;
+		}
 	}
 }

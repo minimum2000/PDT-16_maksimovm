@@ -39,14 +39,14 @@ public class SignupTest extends TestBase {
 		}
 	}
 	
-	@Test
+	//@Test
 	public void newUserShouldSignUp() {
 		accHelper.signup(user);
 		accHelper.login(user);
 		assertThat(accHelper.loggedUser(), equalTo(user.login));
 	}
 	
-	@Test
+	//@Test
 	public void existingUserShouldNotSignUp() {
 		try {
 			accHelper.signup(user);
@@ -63,5 +63,6 @@ public class SignupTest extends TestBase {
 	@Test
 	public void deleteCreatedUser() {
 		accHelper.signupAdmin(admin);
+		accHelper.deleteUserByAdmin();
 	}
 }

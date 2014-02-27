@@ -64,10 +64,18 @@ public class AccountHelper extends WebDriverHelperBase {
 		return element.getText();
 	}
 
-
-
 	public void signupAdmin(Admin admin) {
 		openUrl("/");
-		
+		type(By.name("username"), admin.login);
+		type(By.name("password"), admin.password);
+		click(By.cssSelector("input.button"));
+	}
+	
+	public void deleteUserByAdmin() {
+		click(By.linkText("Manage Users"));
+		click(By.xpath("/html/body/table[3]/tbody/tr[4]/td/a"));
+		click(By.xpath("/html/body/div[4]/form[2]/input[3]"));
+		click(By.cssSelector("input.button"));
+		pause(5000);
 	}
 }

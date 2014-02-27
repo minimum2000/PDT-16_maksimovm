@@ -63,4 +63,11 @@ public class AccountHelper extends WebDriverHelperBase {
 		WebElement element = findElement(By.cssSelector("td.login-info-left span"));
 		return element.getText();
 	}
+
+
+
+	public void signupAdmin(Admin admin) {
+		openUrl("/");
+		
+	}
 }

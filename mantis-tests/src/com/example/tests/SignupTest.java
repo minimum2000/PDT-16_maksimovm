@@ -10,6 +10,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import com.example.fw.AccountHelper;
+import com.example.fw.Admin;
 import com.example.fw.JamesHelper;
 import com.example.fw.User;
 
@@ -38,7 +39,7 @@ public class SignupTest extends TestBase {
 		}
 	}
 	
-	//@Test
+	@Test
 	public void newUserShouldSignUp() {
 		accHelper.signup(user);
 		accHelper.login(user);
@@ -54,5 +55,13 @@ public class SignupTest extends TestBase {
 			return;
 		}
 		fail("Exception expected");
+	}
+	
+	private Admin admin = new Admin().setLogin("administrator")
+									 .setPassword("root");
+	
+	@Test
+	public void deleteCreatedUser() {
+		accHelper.signupAdmin(admin);
 	}
 }
